@@ -2,6 +2,7 @@
 
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import type { Session } from 'next-auth'
 
 export default function Navigation() {
   const { data: session } = useSession()
