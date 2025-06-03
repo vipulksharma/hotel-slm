@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { getDb, collections, toObjectId } from '@/lib/db'
 
 export async function POST(request: Request) {
   try {
@@ -9,18 +7,20 @@ export async function POST(request: Request) {
     const { title, type, content } = body
 
     // TODO: Add authentication and get userId
-    const userId = '000000000000000000000000' // Temporary MongoDB ObjectId
+    const userId = toObjectId('000000000000000000000000') // Temporary MongoDB ObjectId
 
-    const document = await prisma.document.create({
-      data: {
-        title,
-        type,
-        content,
-        userId,
-      },
+    const db = await getDb()
+    const document = await db.collection(collections.documents).insertOne({
+      title,
+      type,
+      content,
+      userId,
+      status: 'draft',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     })
 
-    return NextResponse.json(document)
+    return NextResponse.json({ id: document.insertedId, title, type, content })
   } catch (error) {
     console.error('Error creating document:', error)
     return NextResponse.json(
@@ -32,18 +32,8 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
-    // TODO: Add authentication and get userId
-    const userId = '000000000000000000000000' // Temporary MongoDB ObjectId
-
-    const documents = await prisma.document.findMany({
-      where: {
-        userId,
-      },
-      orderBy: {
-        createdAt: 'desc',
-      },
-    })
-
+    const db = await getDb()
+    const documents = await db.collection(collections.documents).find({}).toArray()
     return NextResponse.json(documents)
   } catch (error) {
     console.error('Error fetching documents:', error)
