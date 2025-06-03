@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 // import { redirect } from "next/navigation";
 import { Providers } from "./providers";
 import Navigation from "@/components/Navigation";
@@ -11,8 +11,8 @@ import Navigation from "@/components/Navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Legal India - Create Legal Documents Easily",
-  description: "Create legal documents like rent agreements and affidavits easily with our user-friendly platform.",
+  title: "Legal India - Legal Documents Made Easy",
+  description: "Create, manage, and share legal documents easily with Legal India.",
   manifest: "/manifest.json",
 };
 
