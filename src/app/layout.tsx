@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 import { Providers } from "./providers";
 import Navigation from "@/components/Navigation";
 
