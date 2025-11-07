@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "android:setup": "bash scripts/setup-bubblewrap.sh",
+    "android:init": "bubblewrap init --manifest=https://localhost:3000/manifest.json",
+    "android:build": "bubblewrap build"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
