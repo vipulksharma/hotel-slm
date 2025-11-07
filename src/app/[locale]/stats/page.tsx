@@ -1,13 +1,10 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
 import { useGameStore } from '@/store/gameStore';
-import { BarChart3, ArrowLeft } from 'lucide-react';
+import { BarChart3 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function StatsPage() {
-  const router = useRouter();
   const { userStats } = useGameStore();
 
   return (
