@@ -158,16 +158,16 @@ export default function ResultsPage() {
         </Card>
 
         {/* Action Buttons */}
-        <div className="flex gap-4 justify-center mt-8">
-          <Button variant="primary" onClick={handlePlayAgain}>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8">
+          <Button variant="primary" onClick={handlePlayAgain} className="w-full sm:w-auto">
             <RotateCcw className="w-4 h-4 mr-2" />
             {tResults('playAgain')}
           </Button>
-          <Button variant="outline" onClick={() => router.push(`/${locale}/game`)}>
+          <Button variant="outline" onClick={() => router.push(`/${locale}/game`)} className="w-full sm:w-auto">
             <Home className="w-4 h-4 mr-2" />
             {t('backToScenarios')}
           </Button>
-          <Button variant="secondary" onClick={() => router.push(`/${locale}/results`)}>
+          <Button variant="secondary" onClick={() => router.push(`/${locale}/results`)} className="w-full sm:w-auto">
             <Trophy className="w-4 h-4 mr-2" />
             {tResults('viewAllResults')}
           </Button>

@@ -2,7 +2,7 @@
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { CheckCircle2, XCircle, Info } from 'lucide-react';
+import { CheckCircle2, XCircle, Info, CheckCircle, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import type { Question, AnswerOption } from '@/types/game';
@@ -13,7 +13,9 @@ interface QuestionCardProps {
   showExplanation: boolean;
   onSelectAnswer: (answerId: string) => void;
   onSubmit: () => void;
+  onNext?: () => void;
   isAnswered: boolean;
+  isLastQuestion?: boolean;
 }
 
 export const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -22,7 +24,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   showExplanation,
   onSelectAnswer,
   onSubmit,
+  onNext,
   isAnswered,
+  isLastQuestion = false,
 }) => {
   const t = useTranslations('game');
   const tQuestions = useTranslations('questions');
@@ -82,7 +86,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             {question.points} {t('points')}
           </span>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
           {translatedQuestionObj.question}
         </h2>
         {question.lawReference && (
@@ -107,14 +111,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 onClick={() => !isAnswered && onSelectAnswer(option.id)}
                 disabled={isAnswered}
                 className={`
-                  w-full text-left p-4 rounded-lg border-2 transition-all duration-200
+                  w-full text-left p-3 sm:p-4 rounded-lg border-2 transition-all duration-200 min-h-[44px] flex items-center
                   ${isSelected
                     ? status === 'correct'
                       ? 'border-success-500 bg-success-50'
                       : status === 'incorrect'
                       ? 'border-danger-500 bg-danger-50'
                       : 'border-primary-500 bg-primary-50'
-                    : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50'
+                    : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50 active:bg-gray-100'
                   }
                   ${isAnswered ? 'cursor-not-allowed' : 'cursor-pointer'}
                 `}
@@ -167,13 +171,36 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       </AnimatePresence>
 
       <div className="flex justify-end">
-        <Button
-          variant="primary"
-          onClick={onSubmit}
-          disabled={!selectedAnswer || isAnswered}
-        >
-          {isAnswered ? t('answered') : t('submitAnswer')}
-        </Button>
+        {!showExplanation ? (
+          <Button
+            variant="primary"
+            onClick={onSubmit}
+            disabled={!selectedAnswer || isAnswered}
+            className="w-full sm:w-auto min-h-[44px]"
+          >
+            {t('submitAnswer')}
+          </Button>
+        ) : (
+          onNext && (
+            <Button
+              variant="primary"
+              onClick={onNext}
+              className="w-full sm:w-auto min-h-[44px]"
+            >
+              {isLastQuestion ? (
+                <>
+                  {t('finish')}
+                  <CheckCircle className="w-4 h-4 ml-2 inline" />
+                </>
+              ) : (
+                <>
+                  {t('next')}
+                  <ArrowRight className="w-4 h-4 ml-2 inline" />
+                </>
+              )}
+            </Button>
+          )
+        )}
       </div>
     </Card>
   );

@@ -65,9 +65,9 @@ export const ScenarioCard: React.FC<ScenarioCardProps> = ({
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-xl font-bold text-gray-900">
-                {translatedTitle}
-              </h3>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+              {translatedTitle}
+            </h3>
               {!isUnlocked && (
                 <Lock className="w-5 h-5 text-gray-400" />
               )}

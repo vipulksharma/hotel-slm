@@ -8,7 +8,7 @@ import { ProgressTracker } from '@/components/game/ProgressTracker';
 import { Button } from '@/components/ui/Button';
 import { useGameStore } from '@/store/gameStore';
 import { getScenarioById } from '@/data/scenarios';
-import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function GameScenarioPage() {
@@ -90,7 +90,7 @@ export default function GameScenarioPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
       {/* Header */}
       <div className="mb-6">
         {/* <Button
@@ -101,10 +101,10 @@ export default function GameScenarioPage() {
           <ArrowLeft className="w-4 h-4 mr-2" />
           {t('backToScenarios')}
         </Button> */}
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
           {safeTranslate(tScenarios, `${currentScenario.id}.title`, currentScenario.title)}
         </h1>
-        <p className="text-gray-600">
+        <p className="text-sm sm:text-base text-gray-600">
           {safeTranslate(tScenarios, `${currentScenario.id}.description`, currentScenario.description)}
         </p>
       </div>
@@ -131,43 +131,27 @@ export default function GameScenarioPage() {
             showExplanation={showExplanation}
             onSelectAnswer={selectAnswer}
             onSubmit={handleSubmit}
+            onNext={handleNext}
             isAnswered={showExplanation}
+            isLastQuestion={isLastQuestion}
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation */}
-      <div className="flex justify-between items-center mt-6">
-        <Button
-          variant="secondary"
-          onClick={previousQuestion}
-          disabled={isFirstQuestion}
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          {t('back')}
-        </Button>
-
-        <div className="flex gap-2">
-          {showExplanation && (
-            <Button
-              variant="primary"
-              onClick={handleNext}
-            >
-              {isLastQuestion ? (
-                <>
-                  {t('finish')}
-                  <CheckCircle className="w-4 h-4 ml-2" />
-                </>
-              ) : (
-                <>
-                  {t('next')}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </>
-              )}
-            </Button>
-          )}
+      {/* Navigation - Only show back button, next is in QuestionCard */}
+      {!showExplanation && (
+        <div className="flex justify-start mt-4 sm:mt-6">
+          <Button
+            variant="secondary"
+            onClick={previousQuestion}
+            disabled={isFirstQuestion}
+            className="w-full sm:w-auto"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            {t('back')}
+          </Button>
         </div>
-      </div>
+      )}
     </div>
   );
 }
