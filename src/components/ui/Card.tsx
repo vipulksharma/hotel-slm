@@ -12,15 +12,15 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const variants = {
-    default: 'bg-white border border-gray-200',
-    elevated: 'bg-white shadow-lg',
-    outlined: 'bg-white border-2 border-gray-300',
+    default: 'bg-white border border-gray-200 shadow-soft',
+    elevated: 'bg-white shadow-lg hover:shadow-xl transition-shadow duration-300',
+    outlined: 'bg-white border-2 border-gray-200 shadow-soft',
   };
 
   return (
     <div
       className={cn(
-        'rounded-xl p-6',
+        'rounded-2xl p-6 transition-all duration-300',
         variants[variant],
         className
       )}

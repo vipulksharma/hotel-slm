@@ -76,7 +76,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   };
 
   return (
-    <Card variant="elevated" className="w-full max-w-3xl mx-auto">
+    <Card variant="elevated" className="w-full max-w-3xl mx-auto animate-slide-up">
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-2">
           <Badge variant="info">
@@ -111,14 +111,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 onClick={() => !isAnswered && onSelectAnswer(option.id)}
                 disabled={isAnswered}
                 className={`
-                  w-full text-left p-3 sm:p-4 rounded-lg border-2 transition-all duration-200 min-h-[44px] flex items-center
+                  w-full text-left p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 min-h-[44px] flex items-center
                   ${isSelected
                     ? status === 'correct'
-                      ? 'border-success-500 bg-success-50'
+                      ? 'border-success-500 bg-success-50 shadow-md scale-105'
                       : status === 'incorrect'
-                      ? 'border-danger-500 bg-danger-50'
-                      : 'border-primary-500 bg-primary-50'
-                    : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50 active:bg-gray-100'
+                      ? 'border-danger-500 bg-danger-50 shadow-md scale-105'
+                      : 'border-primary-500 bg-primary-50 shadow-md scale-105'
+                    : 'border-gray-200 hover:border-primary-400 hover:bg-primary-50/50 hover:shadow-md hover:scale-[1.02] active:scale-100'
                   }
                   ${isAnswered ? 'cursor-not-allowed' : 'cursor-pointer'}
                 `}

@@ -16,14 +16,14 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const baseStyles = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95';
   
   const variants = {
-    primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
-    secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-primary-500',
-    danger: 'bg-danger-600 text-white hover:bg-danger-700 focus:ring-primary-500',
-    success: 'bg-success-600 text-white hover:bg-success-700 focus:ring-primary-500',
-    outline: 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50 focus:ring-primary-500',
+    primary: 'bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg hover:scale-105 focus:ring-primary-400 shadow-md',
+    secondary: 'bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-300 shadow-sm',
+    danger: 'bg-danger-500 text-white hover:bg-danger-600 hover:shadow-lg focus:ring-danger-400 shadow-md',
+    success: 'bg-success-500 text-white hover:bg-success-600 hover:shadow-lg focus:ring-success-400 shadow-md',
+    outline: 'border-2 border-primary-500 text-primary-600 hover:bg-primary-50 hover:border-primary-600 focus:ring-primary-400 bg-white',
   };
 
   const sizes = {

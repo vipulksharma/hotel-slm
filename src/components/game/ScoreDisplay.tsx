@@ -21,13 +21,19 @@ export const ScoreDisplay: React.FC<ScoreDisplayProps> = ({
   const scoreColor = getScoreColor(percentage);
 
   return (
-    <Card variant="elevated" className="text-center">
+    <Card variant="elevated" className="text-center bg-gradient-to-br from-primary-50 to-white">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
       >
-        <Trophy className="w-16 h-16 mx-auto mb-4 text-yellow-500" />
+        <motion.div
+          initial={{ rotate: -10, scale: 0.8 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+        >
+          <Trophy className="w-16 h-16 mx-auto mb-4 text-primary-500 drop-shadow-md" />
+        </motion.div>
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Score</h3>
         <div className="mb-4">
           <motion.div

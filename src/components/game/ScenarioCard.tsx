@@ -57,7 +57,7 @@ export const ScenarioCard: React.FC<ScenarioCardProps> = ({
       variant="elevated" 
       className={`transition-all duration-300 ${
         isUnlocked 
-          ? 'hover:shadow-xl cursor-pointer' 
+          ? 'hover:shadow-xl hover:scale-[1.02] cursor-pointer border border-transparent hover:border-primary-200' 
           : 'opacity-60 cursor-not-allowed bg-gray-50'
       }`}
     >
