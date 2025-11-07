@@ -1,43 +1,65 @@
-import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import "./globals.css";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
-// import { redirect } from "next/navigation";
-import { Providers } from "./providers";
-import Navigation from "@/components/Navigation";
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { Navigation } from '@/components/layout/Navigation';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
-  title: "Legal India - Legal Documents Made Easy",
-  description: "Create, manage, and share legal documents easily with Legal India.",
-  manifest: "/manifest.json",
+  title: {
+    default: 'Indian Road Laws Learning Game',
+    template: '%s | Road Laws Game',
+  },
+  description: 'Learn Indian road driving laws through interactive scenarios and quizzes',
+  keywords: ['Indian traffic laws', 'road safety', 'driving rules', 'traffic education'],
+  authors: [{ name: 'Road Laws Game' }],
+  creator: 'Road Laws Game',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    title: 'Indian Road Laws Learning Game',
+    description: 'Learn Indian road driving laws through interactive scenarios and quizzes',
+    siteName: 'Road Laws Game',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Indian Road Laws Learning Game',
+    description: 'Learn Indian road driving laws through interactive scenarios and quizzes',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  themeColor: "#000000",
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#0284c7' },
+    { media: '(prefers-color-scheme: dark)', color: '#0369a1' },
+  ],
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
-  const session = await getServerSession(authOptions);
-
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body className={inter.className}>
-        <Providers>
-          {session && <Navigation />}
+        <Navigation />
+        <main className="min-h-screen bg-gray-50">
           {children}
-          <Analytics />
-        </Providers>
+        </main>
       </body>
     </html>
   );

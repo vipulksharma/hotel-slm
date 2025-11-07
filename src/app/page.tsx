@@ -1,64 +1,117 @@
-import Link from 'next/link'
+'use client';
+import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
+import { BookOpen, Target, Trophy, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-export default function Home() {
+export default function HomePage() {
+  const features = [
+    {
+      icon: BookOpen,
+      title: 'Interactive Scenarios',
+      description: 'Learn through real-world driving situations with multiple choice questions',
+    },
+    {
+      icon: Target,
+      title: 'Progressive Learning',
+      description: 'Start with beginner scenarios and advance to complex situations',
+    },
+    {
+      icon: Trophy,
+      title: 'Track Progress',
+      description: 'Monitor your scores and achievements as you learn',
+    },
+    {
+      icon: TrendingUp,
+      title: 'Legal References',
+      description: 'Each question includes references to specific Indian traffic laws',
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-100">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-            Create Legal Documents
-            <span className="text-blue-600"> Made Simple</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Generate professional legal documents like rent agreements and affidavits in minutes.
-            No legal expertise required.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {documentTypes.map((doc) => (
-            <Link
-              key={doc.id}
-              href={`/documents/${doc.id}`}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="text-blue-600 mb-4">{doc.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{doc.title}</h3>
-              <p className="text-gray-600">{doc.description}</p>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <Link
-            href="/documents/new"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
-          >
-            Create New Document
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Hero Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          Learn Indian Road Laws
+        </h1>
+        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Master Indian traffic rules and driving laws through interactive scenarios
+          and engaging quizzes. Test your knowledge and become a safer driver.
+        </p>
+        <div className="flex gap-4 justify-center">
+          <Link href="/game">
+            <Button variant="primary" size="lg">
+              Start Learning
+            </Button>
+          </Link>
+          <Link href="/results">
+            <Button variant="outline" size="lg">
+              View Results
+            </Button>
           </Link>
         </div>
+      </motion.div>
+
+      {/* Features Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {features.map((feature, index) => {
+          const Icon = feature.icon;
+          return (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card variant="elevated" className="text-center h-full hover:shadow-xl transition-shadow">
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 bg-primary-100 rounded-full">
+                    <Icon className="w-8 h-8 text-primary-600" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {feature.description}
+                </p>
+              </Card>
+            </motion.div>
+          );
+        })}
       </div>
-    </main>
-  )
+
+      {/* Stats Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <Card variant="elevated" className="bg-gradient-to-r from-primary-600 to-primary-700 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">4+</div>
+              <div className="text-primary-100">Scenarios</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">10+</div>
+              <div className="text-primary-100">Questions</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">3</div>
+              <div className="text-primary-100">Difficulty Levels</div>
+            </div>
+          </div>
+        </Card>
+      </motion.div>
+    </div>
+  );
 }
 
-const documentTypes = [
-  {
-    id: 'rent-agreement',
-    title: 'Rent Agreement',
-    description: 'Create a legally binding rent agreement for your property.',
-    icon: '🏠',
-  },
-  {
-    id: 'affidavit',
-    title: 'Affidavit',
-    description: 'Generate affidavits for various legal purposes.',
-    icon: '📜',
-  },
-  {
-    id: 'power-of-attorney',
-    title: 'Power of Attorney',
-    description: 'Create a power of attorney document to authorize someone.',
-    icon: '✍️',
-  },
-]
