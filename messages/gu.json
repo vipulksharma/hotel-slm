@@ -1,0 +1,2034 @@
+{
+  "common": {
+    "appName": "ભારતીય રોડ કાનૂન શીખવાનો રમત",
+    "chooseScenario": "એક દૃશ્ય પસંદ કરો",
+    "selectScenario": "ભારતીય રોડ ડ્રાઇવિંગ કાનૂન વિશે શીખવા માટે એક દૃશ્ય પસંદ કરો",
+    "searchScenarios": "દૃશ્યો શોધો...",
+    "allDifficulties": "બધા મુશ્કેલી સ્તરો",
+    "allCategories": "બધા વર્ગો",
+    "beginner": "શરૂઆત",
+    "intermediate": "મધ્યમ",
+    "advanced": "અદ્યતન",
+    "noScenariosFound": "તમારા માપદંડો સાથે મેળ ખાતા કોઈ દૃશ્યો મળ્યા નથી.",
+    "start": "શરૂ કરો",
+    "continue": "ચાલુ રાખો",
+    "back": "પાછળ",
+    "next": "આગળ",
+    "submit": "સબમિટ કરો",
+    "finish": "સમાપ્ત કરો",
+    "retry": "ફરી પ્રયાસ કરો",
+    "home": "હોમ",
+    "game": "રમત",
+    "results": "પરિણામો",
+    "stats": "આંકડા",
+    "language": "ભાષા"
+  },
+  "game": {
+    "question": "પ્રશ્ન",
+    "of": "નો",
+    "points": "પોઈન્ટ્સ",
+    "selectAnswer": "એક જવાબ પસંદ કરો",
+    "correct": "સાચું!",
+    "incorrect": "ખોટું",
+    "explanation": "સમજૂતી",
+    "lawReference": "કાનૂન સંદર્ભ",
+    "yourAnswer": "તમારો જવાબ",
+    "correctAnswer": "સાચો જવાબ",
+    "score": "સ્કોર",
+    "timeTaken": "લીધેલો સમય",
+    "completed": "પૂર્ણ",
+    "estimatedTime": "અંદાજિત સમય",
+    "questions": "પ્રશ્નો",
+    "category": "વર્ગ",
+    "difficulty": "મુશ્કેલી",
+    "tags": "ટેગ્સ",
+    "answered": "જવાબ આપ્યો",
+    "submitAnswer": "જવાબ સબમિટ કરો",
+    "noExplanation": "કોઈ સમજૂતી ઉપલબ્ધ નથી.",
+    "minutes": "મિનિટ",
+    "scenario": "દૃશ્ય",
+    "categories": {
+      "Traffic Rules": "ટ્રાફિક નિયમો",
+      "Speed & Overtaking": "ઝડપ અને ઓવરટેકિંગ",
+      "Parking Rules": "પાર્કિંગ નિયમો",
+      "Legal Compliance": "કાનૂની અનુપાલન",
+      "Road Signs": "રોડ સાઇન્સ",
+      "Vehicle Documents": "વાહન દસ્તાવેજો",
+      "Two-Wheeler Rules": "બે-વ્હીલર નિયમો",
+      "Highway Rules": "હાઇવે નિયમો",
+      "Pedestrian & Cyclist Rights": "પદયાત્રી અને સાઇકલ સવાર અધિકારો",
+      "Lane Discipline": "લેન શિસ્ત"
+    }
+  },
+  "scenarios": {
+    "scenario-1": {
+      "title": "ટ્રાફિક સિગ્નલ્સ અને રસ્તાનો અધિકાર",
+      "description": "ભારતીય ટ્રાફિક કાનૂનો અનુસાર ટ્રાફિક સિગ્નલ્સ, રસ્તાનો અધિકાર નિયમો અને આંતરછેદ વર્તન વિશે જાણો."
+    },
+    "scenario-2": {
+      "title": "ઝડપ મર્યાદા અને ઓવરટેકિંગ",
+      "description": "ભારતીય ટ્રાફિક નિયમો અનુસાર વિવિધ ઝોનમાં ઝડપ મર્યાદા અને સુરક્ષિત ઓવરટેકિંગ પ્રક્રિયાઓ સમજો."
+    },
+    "scenario-3": {
+      "title": "પાર્કિંગ નિયમો અને નિયમનો",
+      "description": "ભારતમાં પાર્કિંગ નિયમો, નો-પાર્કિંગ ઝોન અને પાર્કિંગ ઉલ્લંઘન માટે દંડમાં નિપુણતા મેળવો."
+    },
+    "scenario-4": {
+      "title": "નશામાં ડ્રાઇવિંગ અને દંડ",
+      "description": "કાનૂની રક્ત આલ્કોહોલ મર્યાદા, નશામાં ડ્રાઇવિંગ માટે દંડ અને સંબંધિત ગુનાઓ સમજો."
+    },
+    "scenario-5": {
+      "title": "રોડ સાઇન્સ અને માર્કિંગ",
+      "description": "ભારતીય ટ્રાફિક નિયમો અનુસાર વિવિધ રોડ સાઇન્સ, લેન માર્કિંગ અને તેમના અર્થો વિશે જાણો."
+    },
+    "scenario-6": {
+      "title": "વાહન દસ્તાવેજો અને નોંધણી",
+      "description": "ભારતમાં ડ્રાઇવિંગ માટે વાહન નોંધણી, વીમો, પ્રદૂષણ પ્રમાણપત્રો અને જરૂરી દસ્તાવેજો સમજો."
+    },
+    "scenario-7": {
+      "title": "બે-વ્હીલર વિશિષ્ટ નિયમો",
+      "description": "ભારતમાં મોટરસાઇકલ, સ્કૂટર અને બે-વ્હીલર માટે વિશેષ નિયમો અને નિયમનો વિશે જાણો."
+    },
+    "scenario-8": {
+      "title": "હાઇવે અને એક્સપ્રેસવે નિયમો",
+      "description": "ભારતમાં હાઇવે અને એક્સપ્રેસવે માટે વિશેષ નિયમો, ઝડપ મર્યાદા અને સુરક્ષા નિયમનો વિશે જાણો."
+    },
+    "scenario-9": {
+      "title": "પદયાત્રી અને સાઇકલ સવાર અધિકારો",
+      "description": "પદયાત્રીઓ અને સાઇકલ સવારોના અધિકારો સમજો, અને ભારતીય રસ્તાઓ પર ડ્રાઇવરોએ તેમની સાથે કેવી રીતે વાતચીત કરવી જોઈએ."
+    },
+    "scenario-10": {
+      "title": "લેન ડ્રાઇવિંગ અને ઓવરટેકિંગ નિયમો",
+      "description": "ભારતમાં શહેરી રસ્તાઓ, હાઇવે અને એક્સપ્રેસવે માટે લેન શિસ્ત, લેન બદલાવ અને ઓવરટેકિંગ નિયમોમાં નિપુણતા મેળવો."
+    }
+  },
+  "results": {
+    "yourResults": "તમારા પરિણામો",
+    "totalScore": "કુલ સ્કોર",
+    "scenariosCompleted": "પૂર્ણ કરેલા દૃશ્યો",
+    "averageScore": "સરેરાશ સ્કોર",
+    "totalQuestions": "કુલ પ્રશ્નો",
+    "correctAnswers": "સાચા જવાબો",
+    "incorrectAnswers": "ખોટા જવાબો",
+    "viewDetails": "વિગતો જુઓ",
+    "playAgain": "ફરી રમો"
+  },
+  "stats": {
+    "yourStatistics": "તમારા આંકડા",
+    "overallPerformance": "કુલ પ્રદર્શન",
+    "scenariosPlayed": "રમેલા દૃશ્યો",
+    "totalTime": "કુલ સમય",
+    "bestScore": "શ્રેષ્ઠ સ્કોર",
+    "improvement": "સુધારો"
+  },
+  "questions": {
+    "q1-1": {
+      "question": "What should you do when you see a red traffic light?",
+      "options": {
+        "a1-1": {
+          "text": "Slow down and proceed if no traffic is coming",
+          "explanation": "Red light means complete stop. You must not proceed even if there is no traffic."
+        },
+        "a1-2": {
+          "text": "Come to a complete stop and wait for green light",
+          "explanation": "Correct! Red light means you must come to a complete stop and wait for the green signal."
+        },
+        "a1-3": {
+          "text": "Proceed with caution",
+          "explanation": "Red light requires a complete stop, not proceeding with caution."
+        },
+        "a1-4": {
+          "text": "Only stop if there are other vehicles",
+          "explanation": "You must stop at red light regardless of other vehicles."
+        }
+      }
+    },
+    "q1-2": {
+      "question": "At an intersection without traffic signals, who has the right of way?",
+      "options": {
+        "a1-5": {
+          "text": "The vehicle on the right",
+          "explanation": "Correct! In India, vehicles coming from the right have the right of way at uncontrolled intersections."
+        },
+        "a1-6": {
+          "text": "The larger vehicle",
+          "explanation": "Vehicle size does not determine right of way. The vehicle on the right has priority."
+        },
+        "a1-7": {
+          "text": "The vehicle that arrived first",
+          "explanation": "Right of way is determined by position (right side), not arrival time."
+        },
+        "a1-8": {
+          "text": "The faster vehicle",
+          "explanation": "Speed does not grant right of way. Always yield to vehicles on the right."
+        }
+      }
+    },
+    "q1-3": {
+      "question": "You can turn left at a red light if there is no oncoming traffic.",
+      "options": {
+        "a1-9": {
+          "text": "True",
+          "explanation": "False. In India, you cannot turn left at a red light. You must wait for the green signal."
+        },
+        "a1-10": {
+          "text": "False",
+          "explanation": "Correct! Unlike some countries, India does not allow left turns on red lights."
+        }
+      }
+    },
+    "q1-4": {
+      "question": "What does a yellow/amber traffic light indicate?",
+      "options": {
+        "a1-11": {
+          "text": "Proceed with caution",
+          "explanation": "Yellow light means prepare to stop, not proceed with caution."
+        },
+        "a1-12": {
+          "text": "Stop if safe to do so, otherwise proceed",
+          "explanation": "Correct! Yellow/amber light means you should stop if it is safe to do so, otherwise proceed with caution."
+        },
+        "a1-13": {
+          "text": "Speed up to clear the intersection",
+          "explanation": "Never speed up at a yellow light. This is dangerous and illegal."
+        },
+        "a1-14": {
+          "text": "Continue at the same speed",
+          "explanation": "You should prepare to stop when you see a yellow light."
+        }
+      }
+    },
+    "q1-5": {
+      "question": "At a T-junction, who has the right of way?",
+      "options": {
+        "a1-15": {
+          "text": "The vehicle on the main road",
+          "explanation": "Correct! Vehicles on the main road have the right of way at T-junctions. Vehicles entering from the side road must yield."
+        },
+        "a1-16": {
+          "text": "The vehicle turning right",
+          "explanation": "At a T-junction, the main road traffic has priority, not the turning vehicle."
+        },
+        "a1-17": {
+          "text": "The larger vehicle",
+          "explanation": "Vehicle size does not determine right of way. Main road traffic has priority."
+        },
+        "a1-18": {
+          "text": "The vehicle that arrived first",
+          "explanation": "Right of way is determined by road position, not arrival time."
+        }
+      }
+    },
+    "q1-6": {
+      "question": "You must always stop at a stop sign, even if there is no traffic.",
+      "options": {
+        "a1-19": {
+          "text": "True",
+          "explanation": "Correct! A stop sign requires a complete stop regardless of traffic conditions."
+        },
+        "a1-20": {
+          "text": "False",
+          "explanation": "False. Stop signs require a complete stop, even when no other traffic is present."
+        }
+      }
+    },
+    "q1-7": {
+      "question": "What should you do when approaching a roundabout?",
+      "options": {
+        "a1-21": {
+          "text": "Enter immediately if there is space",
+          "explanation": "You must yield to traffic already in the roundabout before entering."
+        },
+        "a1-22": {
+          "text": "Yield to traffic already in the roundabout",
+          "explanation": "Correct! Traffic already in the roundabout has the right of way. You must yield before entering."
+        },
+        "a1-23": {
+          "text": "Honk to alert other drivers",
+          "explanation": "Honking is not a substitute for following right-of-way rules."
+        },
+        "a1-24": {
+          "text": "Speed up to merge quickly",
+          "explanation": "You should slow down and yield, not speed up."
+        }
+      }
+    },
+    "q1-8": {
+      "question": "You are at an intersection with a green light. An ambulance with sirens is approaching from your right. What should you do?",
+      "options": {
+        "a1-25": {
+          "text": "Continue through the intersection since you have a green light",
+          "explanation": "Emergency vehicles always have priority, even if you have a green light."
+        },
+        "a1-26": {
+          "text": "Stop and give way to the ambulance",
+          "explanation": "Correct! Emergency vehicles with sirens have the right of way in all situations. You must stop and give way."
+        },
+        "a1-27": {
+          "text": "Speed up to clear the intersection quickly",
+          "explanation": "Never speed up. You must stop and yield to emergency vehicles."
+        },
+        "a1-28": {
+          "text": "Only yield if the ambulance is directly in front",
+          "explanation": "You must yield to emergency vehicles from any direction when they have sirens on."
+        }
+      }
+    },
+    "q1-9": {
+      "question": "What is the meaning of a flashing red traffic light?",
+      "options": {
+        "a1-29": {
+          "text": "Treat it as a stop sign",
+          "explanation": "Correct! A flashing red light should be treated as a stop sign - come to a complete stop and proceed when safe."
+        },
+        "a1-30": {
+          "text": "Proceed with caution",
+          "explanation": "A flashing red light requires a complete stop, not just caution."
+        },
+        "a1-31": {
+          "text": "Ignore it and proceed normally",
+          "explanation": "A flashing red light must be treated as a stop sign."
+        },
+        "a1-32": {
+          "text": "Slow down but do not stop",
+          "explanation": "A flashing red light requires a complete stop."
+        }
+      }
+    },
+    "q1-10": {
+      "question": "You can make a U-turn at an intersection if there is no sign prohibiting it.",
+      "options": {
+        "a1-33": {
+          "text": "True",
+          "explanation": "False. U-turns are generally prohibited at intersections unless specifically allowed by signs."
+        },
+        "a1-34": {
+          "text": "False",
+          "explanation": "Correct! U-turns at intersections are generally prohibited unless explicitly allowed by traffic signs."
+        }
+      }
+    },
+    "q2-1": {
+      "question": "What is the maximum speed limit for cars in city areas?",
+      "options": {
+        "a2-1": {
+          "text": "40 km/h",
+          "explanation": "This is too low. The standard city speed limit is higher."
+        },
+        "a2-2": {
+          "text": "50 km/h",
+          "explanation": "Correct! The maximum speed limit for cars in city areas is typically 50 km/h, though it may vary by state."
+        },
+        "a2-3": {
+          "text": "60 km/h",
+          "explanation": "60 km/h is usually for suburban areas, not city centers."
+        },
+        "a2-4": {
+          "text": "70 km/h",
+          "explanation": "70 km/h is too high for city areas and is typically for highways."
+        }
+      }
+    },
+    "q2-2": {
+      "question": "When is it safe to overtake another vehicle?",
+      "options": {
+        "a2-5": {
+          "text": "On a curve or hill where visibility is limited",
+          "explanation": "Never overtake on curves or hills with limited visibility. It is extremely dangerous."
+        },
+        "a2-6": {
+          "text": "When you have clear visibility and sufficient space",
+          "explanation": "Correct! Only overtake when you have clear visibility ahead and sufficient space to complete the maneuver safely."
+        },
+        "a2-7": {
+          "text": "In a no-overtaking zone if traffic is slow",
+          "explanation": "No-overtaking zones are marked for safety reasons and must be respected regardless of traffic speed."
+        },
+        "a2-8": {
+          "text": "When the vehicle ahead is going slower than you want",
+          "explanation": "Speed preference alone is not a valid reason. You must ensure safe conditions for overtaking."
+        }
+      }
+    },
+    "q2-3": {
+      "question": "You are driving on a two-lane highway. A truck is ahead of you. When should you NOT overtake?",
+      "options": {
+        "a2-9": {
+          "text": "When approaching a bridge",
+          "explanation": "Correct! Bridges often have limited space and visibility. Overtaking near bridges is dangerous and often prohibited."
+        },
+        "a2-10": {
+          "text": "When you can see clearly ahead for 200 meters",
+          "explanation": "If visibility is clear and there is sufficient space, overtaking may be safe."
+        },
+        "a2-11": {
+          "text": "When there is a broken center line",
+          "explanation": "A broken center line typically indicates that overtaking is allowed if safe."
+        },
+        "a2-12": {
+          "text": "When the truck is going 20 km/h slower than the speed limit",
+          "explanation": "The speed difference alone does not determine safety. Visibility and road conditions matter more."
+        }
+      }
+    },
+    "q2-4": {
+      "question": "What is the maximum speed limit for cars on national highways?",
+      "options": {
+        "a2-13": {
+          "text": "80 km/h",
+          "explanation": "Correct! The maximum speed limit for cars on national highways is typically 80 km/h, though it may vary by state."
+        },
+        "a2-14": {
+          "text": "100 km/h",
+          "explanation": "100 km/h is too high for most national highways in India."
+        },
+        "a2-15": {
+          "text": "60 km/h",
+          "explanation": "60 km/h is too low for national highways."
+        },
+        "a2-16": {
+          "text": "120 km/h",
+          "explanation": "120 km/h is not the standard speed limit for national highways in India."
+        }
+      }
+    },
+    "q2-5": {
+      "question": "What should you do before overtaking a vehicle?",
+      "options": {
+        "a2-17": {
+          "text": "Check mirrors, signal, and ensure clear visibility ahead",
+          "explanation": "Correct! Always check mirrors, use indicators, and ensure you have clear visibility before overtaking."
+        },
+        "a2-18": {
+          "text": "Just honk and overtake",
+          "explanation": "Honking alone is not sufficient. You must check mirrors, signal, and ensure safety."
+        },
+        "a2-19": {
+          "text": "Speed up immediately",
+          "explanation": "You should first check your surroundings and signal before speeding up."
+        },
+        "a2-20": {
+          "text": "Overtake from the left side",
+          "explanation": "Overtaking should be done from the right side in India, not the left."
+        }
+      }
+    },
+    "q2-6": {
+      "question": "You can overtake another vehicle from the left side on a one-way road.",
+      "options": {
+        "a2-21": {
+          "text": "True",
+          "explanation": "False. Overtaking from the left is generally prohibited, even on one-way roads."
+        },
+        "a2-22": {
+          "text": "False",
+          "explanation": "Correct! Overtaking should always be done from the right side, even on one-way roads."
+        }
+      }
+    },
+    "q2-7": {
+      "question": "What is the minimum safe distance you should maintain while following another vehicle?",
+      "options": {
+        "a2-23": {
+          "text": "2 seconds gap",
+          "explanation": "Correct! You should maintain at least a 2-second gap from the vehicle ahead for safe following distance."
+        },
+        "a2-24": {
+          "text": "1 second gap",
+          "explanation": "1 second is too close and does not provide enough reaction time."
+        },
+        "a2-25": {
+          "text": "Half a second gap",
+          "explanation": "This is dangerously close and increases the risk of accidents."
+        },
+        "a2-26": {
+          "text": "No specific distance required",
+          "explanation": "Maintaining a safe following distance is essential for road safety."
+        }
+      }
+    },
+    "q2-8": {
+      "question": "You are on a highway and want to overtake a slow-moving vehicle. The road has a solid yellow line in the center. What should you do?",
+      "options": {
+        "a2-27": {
+          "text": "Do not overtake - solid lines indicate no overtaking",
+          "explanation": "Correct! A solid yellow line indicates that overtaking is prohibited. You must not cross it."
+        },
+        "a2-28": {
+          "text": "Overtake quickly before anyone notices",
+          "explanation": "Never violate traffic markings. Solid lines mean no overtaking."
+        },
+        "a2-29": {
+          "text": "Overtake only if the vehicle is very slow",
+          "explanation": "Solid lines mean no overtaking regardless of the speed of the vehicle ahead."
+        },
+        "a2-30": {
+          "text": "Overtake from the left side",
+          "explanation": "Overtaking from the left is prohibited, and solid lines mean no overtaking at all."
+        }
+      }
+    },
+    "q2-9": {
+      "question": "What is the speed limit in school zones?",
+      "options": {
+        "a2-31": {
+          "text": "25 km/h",
+          "explanation": "Correct! School zones typically have a speed limit of 25 km/h to ensure children\\"
+        },
+        "a2-32": {
+          "text": "40 km/h",
+          "explanation": "40 km/h is too high for school zones."
+        },
+        "a2-33": {
+          "text": "50 km/h",
+          "explanation": "50 km/h is the city limit, not for school zones."
+        },
+        "a2-34": {
+          "text": "No specific limit",
+          "explanation": "School zones have specific lower speed limits for safety."
+        }
+      }
+    },
+    "q2-10": {
+      "question": "You can exceed the speed limit by 10 km/h if you are in a hurry.",
+      "options": {
+        "a2-35": {
+          "text": "True",
+          "explanation": "False. Speed limits must be strictly followed. Exceeding them is illegal and dangerous."
+        },
+        "a2-36": {
+          "text": "False",
+          "explanation": "Correct! Speed limits are legal requirements and must be followed at all times, regardless of urgency."
+        }
+      }
+    },
+    "q3-1": {
+      "question": "Where is parking typically NOT allowed?",
+      "options": {
+        "a3-1": {
+          "text": "On designated parking spaces",
+          "explanation": "Designated parking spaces are specifically meant for parking."
+        },
+        "a3-2": {
+          "text": "Within 15 meters of a traffic signal",
+          "explanation": "Correct! Parking within 15 meters of a traffic signal is prohibited as it obstructs visibility and traffic flow."
+        },
+        "a3-3": {
+          "text": "In paid parking lots",
+          "explanation": "Paid parking lots are legal parking areas."
+        },
+        "a3-4": {
+          "text": "In residential areas",
+          "explanation": "Residential areas may have designated parking spaces where parking is allowed."
+        }
+      }
+    },
+    "q3-2": {
+      "question": "You can park your vehicle on a footpath if it is wide enough.",
+      "options": {
+        "a3-5": {
+          "text": "True",
+          "explanation": "False. Parking on footpaths is illegal regardless of width, as it obstructs pedestrian movement."
+        },
+        "a3-6": {
+          "text": "False",
+          "explanation": "Correct! Parking on footpaths is always illegal as it violates pedestrian rights and safety."
+        }
+      }
+    },
+    "q3-3": {
+      "question": "What is the minimum distance you must maintain from a fire hydrant when parking?",
+      "options": {
+        "a3-7": {
+          "text": "3 meters",
+          "explanation": "Correct! You must maintain at least 3 meters distance from a fire hydrant when parking."
+        },
+        "a3-8": {
+          "text": "1 meter",
+          "explanation": "1 meter is too close. Fire hydrants need clear access."
+        },
+        "a3-9": {
+          "text": "5 meters",
+          "explanation": "While more distance is better, the minimum requirement is 3 meters."
+        },
+        "a3-10": {
+          "text": "No specific distance required",
+          "explanation": "There is a specific minimum distance requirement of 3 meters."
+        }
+      }
+    },
+    "q3-4": {
+      "question": "Where is parking prohibited?",
+      "options": {
+        "a3-11": {
+          "text": "Within 5 meters of a crosswalk",
+          "explanation": "Correct! Parking within 5 meters of a crosswalk is prohibited to ensure pedestrian safety."
+        },
+        "a3-12": {
+          "text": "In designated parking areas",
+          "explanation": "Designated parking areas are meant for parking."
+        },
+        "a3-13": {
+          "text": "In paid parking lots",
+          "explanation": "Paid parking lots are legal parking spaces."
+        },
+        "a3-14": {
+          "text": "On private property with permission",
+          "explanation": "Parking on private property with permission is allowed."
+        }
+      }
+    },
+    "q3-5": {
+      "question": "You can park in a no-parking zone if you leave your hazard lights on.",
+      "options": {
+        "a3-15": {
+          "text": "True",
+          "explanation": "False. Hazard lights do not permit parking in no-parking zones. It is still illegal."
+        },
+        "a3-16": {
+          "text": "False",
+          "explanation": "Correct! Hazard lights do not give permission to park in no-parking zones. It is still a violation."
+        }
+      }
+    },
+    "q3-6": {
+      "question": "What should you do if you need to park on a slope?",
+      "options": {
+        "a3-17": {
+          "text": "Turn wheels toward the curb and engage parking brake",
+          "explanation": "Correct! When parking on a slope, turn wheels toward the curb and always engage the parking brake for safety."
+        },
+        "a3-18": {
+          "text": "Just engage the parking brake",
+          "explanation": "You should also turn the wheels toward the curb for additional safety."
+        },
+        "a3-19": {
+          "text": "Leave the vehicle in neutral",
+          "explanation": "Never leave a vehicle in neutral when parked. Always use parking brake and proper gear."
+        },
+        "a3-20": {
+          "text": "No special precautions needed",
+          "explanation": "Parking on slopes requires special precautions for safety."
+        }
+      }
+    },
+    "q3-7": {
+      "question": "You need to park your car but the only available space is in front of a hospital emergency entrance. What should you do?",
+      "options": {
+        "a3-21": {
+          "text": "Park there but leave your contact number",
+          "explanation": "Parking in front of emergency entrances is prohibited and can block life-saving services."
+        },
+        "a3-22": {
+          "text": "Find another parking space - emergency entrances must remain clear",
+          "explanation": "Correct! Emergency entrances must always remain clear. You must find another parking space."
+        },
+        "a3-23": {
+          "text": "Park there for just a few minutes",
+          "explanation": "Even a few minutes can be critical. Emergency entrances must never be blocked."
+        },
+        "a3-24": {
+          "text": "Park there if no emergency vehicles are present",
+          "explanation": "Emergency entrances must remain clear at all times, regardless of current activity."
+        }
+      }
+    },
+    "q3-8": {
+      "question": "What is the penalty for parking in a no-parking zone?",
+      "options": {
+        "a3-25": {
+          "text": "Fine of ₹500",
+          "explanation": "The penalty is higher under the new Motor Vehicles Act."
+        },
+        "a3-26": {
+          "text": "Fine of ₹1,000",
+          "explanation": "Correct! Parking in a no-parking zone can result in a fine of ₹1,000 under the Motor Vehicles Act 2019."
+        },
+        "a3-27": {
+          "text": "Only a warning",
+          "explanation": "No-parking violations carry monetary penalties."
+        },
+        "a3-28": {
+          "text": "No penalty",
+          "explanation": "Parking violations are subject to fines."
+        }
+      }
+    },
+    "q3-9": {
+      "question": "You can park in a disabled parking space if you will only be a few minutes.",
+      "options": {
+        "a3-29": {
+          "text": "True",
+          "explanation": "False. Disabled parking spaces are reserved for vehicles with valid disability permits only."
+        },
+        "a3-30": {
+          "text": "False",
+          "explanation": "Correct! Disabled parking spaces are exclusively for vehicles with valid disability permits, regardless of duration."
+        }
+      }
+    },
+    "q3-10": {
+      "question": "What should you check before parallel parking on a street?",
+      "options": {
+        "a3-31": {
+          "text": "Check for no-parking signs, ensure sufficient space, and signal your intention",
+          "explanation": "Correct! Before parallel parking, check for restrictions, ensure adequate space, and signal to other drivers."
+        },
+        "a3-32": {
+          "text": "Just find an empty space and park",
+          "explanation": "You should check for signs and ensure it\\"
+        },
+        "a3-33": {
+          "text": "Park anywhere if other cars are parked there",
+          "explanation": "Other vehicles being parked does not make it legal. Always check for signs."
+        },
+        "a3-34": {
+          "text": "No checks needed",
+          "explanation": "Always verify parking legality and safety before parking."
+        }
+      }
+    },
+    "q4-1": {
+      "question": "What is the legal blood alcohol content (BAC) limit for drivers in India?",
+      "options": {
+        "a4-1": {
+          "text": "0.03%",
+          "explanation": "Correct! The legal BAC limit in India is 0.03% (30 mg per 100 ml of blood)."
+        },
+        "a4-2": {
+          "text": "0.05%",
+          "explanation": "0.05% is the limit in some countries, but India has a stricter 0.03% limit."
+        },
+        "a4-3": {
+          "text": "0.08%",
+          "explanation": "0.08% is the limit in many Western countries, but India has a lower limit of 0.03%."
+        },
+        "a4-4": {
+          "text": "There is no limit",
+          "explanation": "India has a strict BAC limit of 0.03%. Driving with any alcohol above this is illegal."
+        }
+      }
+    },
+    "q4-2": {
+      "question": "What is the penalty for first-time drunk driving offense in India?",
+      "options": {
+        "a4-5": {
+          "text": "Fine of ₹2,000 and/or imprisonment up to 6 months",
+          "explanation": "This was the old penalty. The new Motor Vehicles Act has stricter penalties."
+        },
+        "a4-6": {
+          "text": "Fine of ₹10,000 and/or imprisonment up to 6 months",
+          "explanation": "Correct! Under the Motor Vehicles Act 2019, first-time drunk driving offense carries a fine of ₹10,000 and/or imprisonment up to 6 months."
+        },
+        "a4-7": {
+          "text": "Only a warning",
+          "explanation": "Drunk driving is a serious offense and carries significant penalties, not just a warning."
+        },
+        "a4-8": {
+          "text": "Fine of ₹500 only",
+          "explanation": "The penalty is much higher. Drunk driving is a serious offense with substantial fines and possible imprisonment."
+        }
+      }
+    },
+    "q4-3": {
+      "question": "What is the penalty for driving without a valid license?",
+      "options": {
+        "a4-9": {
+          "text": "Fine of ₹5,000 and/or imprisonment up to 3 months",
+          "explanation": "Correct! Driving without a valid license can result in a fine of ₹5,000 and/or imprisonment up to 3 months."
+        },
+        "a4-10": {
+          "text": "Fine of ₹1,000 only",
+          "explanation": "The penalty is higher under the new Motor Vehicles Act."
+        },
+        "a4-11": {
+          "text": "Only a warning",
+          "explanation": "Driving without a license is a serious offense with legal penalties."
+        },
+        "a4-12": {
+          "text": "No penalty for first offense",
+          "explanation": "Driving without a license is illegal and carries penalties even for first offense."
+        }
+      }
+    },
+    "q4-4": {
+      "question": "You can drive a vehicle if your license has expired but you have applied for renewal.",
+      "options": {
+        "a4-13": {
+          "text": "True",
+          "explanation": "False. You cannot drive with an expired license, even if you have applied for renewal. You must wait for the new license."
+        },
+        "a4-14": {
+          "text": "False",
+          "explanation": "Correct! An expired license is not valid for driving. You must have a valid license to drive legally."
+        }
+      }
+    },
+    "q4-5": {
+      "question": "What is the penalty for using a mobile phone while driving?",
+      "options": {
+        "a4-15": {
+          "text": "Fine of ₹5,000 and/or imprisonment up to 1 year",
+          "explanation": "Correct! Using a mobile phone while driving can result in a fine of ₹5,000 and/or imprisonment up to 1 year."
+        },
+        "a4-16": {
+          "text": "Fine of ₹1,000 only",
+          "explanation": "The penalty is higher under the new Motor Vehicles Act."
+        },
+        "a4-17": {
+          "text": "Only a warning",
+          "explanation": "Using a mobile phone while driving is a serious offense with legal penalties."
+        },
+        "a4-18": {
+          "text": "Fine of ₹500",
+          "explanation": "The penalty is much higher for this offense."
+        }
+      }
+    },
+    "q4-6": {
+      "question": "You are stopped by traffic police and they ask to see your vehicle documents. Which documents must you carry while driving?",
+      "options": {
+        "a4-19": {
+          "text": "Driving license, vehicle registration, insurance, and pollution certificate",
+          "explanation": "Correct! You must carry your driving license, vehicle registration certificate, insurance certificate, and pollution under control (PUC) certificate while driving."
+        },
+        "a4-20": {
+          "text": "Only driving license",
+          "explanation": "You need to carry multiple documents, not just the driving license."
+        },
+        "a4-21": {
+          "text": "Driving license and vehicle registration only",
+          "explanation": "You also need insurance and PUC certificates."
+        },
+        "a4-22": {
+          "text": "No documents needed if vehicle is registered",
+          "explanation": "You must carry all required documents while driving."
+        }
+      }
+    },
+    "q4-7": {
+      "question": "What is the penalty for not wearing a seatbelt while driving?",
+      "options": {
+        "a4-23": {
+          "text": "Fine of ₹1,000",
+          "explanation": "Correct! Not wearing a seatbelt while driving can result in a fine of ₹1,000."
+        },
+        "a4-24": {
+          "text": "Fine of ₹500",
+          "explanation": "The penalty is ₹1,000 under the new Motor Vehicles Act."
+        },
+        "a4-25": {
+          "text": "Only a warning",
+          "explanation": "Not wearing a seatbelt is a violation with monetary penalty."
+        },
+        "a4-26": {
+          "text": "No penalty",
+          "explanation": "Seatbelt usage is mandatory and violations carry penalties."
+        }
+      }
+    },
+    "q4-8": {
+      "question": "You can drive a vehicle without insurance if you promise to get it insured soon.",
+      "options": {
+        "a4-27": {
+          "text": "True",
+          "explanation": "False. Third-party insurance is mandatory for all vehicles. You cannot drive without valid insurance."
+        },
+        "a4-28": {
+          "text": "False",
+          "explanation": "Correct! Third-party insurance is mandatory. You cannot drive a vehicle without valid insurance coverage."
+        }
+      }
+    },
+    "q4-9": {
+      "question": "What is the penalty for jumping a red traffic signal?",
+      "options": {
+        "a4-29": {
+          "text": "Fine of ₹5,000 and/or imprisonment up to 6 months",
+          "explanation": "Correct! Jumping a red traffic signal can result in a fine of ₹5,000 and/or imprisonment up to 6 months."
+        },
+        "a4-30": {
+          "text": "Fine of ₹1,000 only",
+          "explanation": "The penalty is higher under the new Motor Vehicles Act."
+        },
+        "a4-31": {
+          "text": "Fine of ₹500",
+          "explanation": "The penalty is much higher for this serious violation."
+        },
+        "a4-32": {
+          "text": "Only a warning",
+          "explanation": "Red light violations are serious offenses with significant penalties."
+        }
+      }
+    },
+    "q4-10": {
+      "question": "You are involved in a minor accident with another vehicle. No one is injured, but there is vehicle damage. What should you do?",
+      "options": {
+        "a4-33": {
+          "text": "Exchange contact and insurance details, and report to police if required",
+          "explanation": "Correct! You should exchange contact and insurance details with the other party and report to police if the damage exceeds certain limits or if required by law."
+        },
+        "a4-34": {
+          "text": "Drive away quickly to avoid trouble",
+          "explanation": "Leaving the scene of an accident is illegal and can result in serious penalties."
+        },
+        "a4-35": {
+          "text": "Only exchange phone numbers",
+          "explanation": "You need to exchange proper details including insurance information."
+        },
+        "a4-36": {
+          "text": "Ignore it if the other driver agrees",
+          "explanation": "Accidents should be properly documented and reported as required by law."
+        }
+      }
+    },
+    "q5-1": {
+      "question": "What does a red circular sign with a white horizontal bar indicate?",
+      "options": {
+        "a5-1": {
+          "text": "No entry",
+          "explanation": "Correct! A red circular sign with a white horizontal bar means "
+        },
+        "a5-2": {
+          "text": "One-way road",
+          "explanation": "A one-way road sign is different. This sign specifically means no entry."
+        },
+        "a5-3": {
+          "text": "Stop ahead",
+          "explanation": "Stop signs are octagonal. This circular sign means no entry."
+        },
+        "a5-4": {
+          "text": "No parking",
+          "explanation": "No parking signs are different. This sign means no entry."
+        }
+      }
+    },
+    "q5-2": {
+      "question": "What does a yellow diamond-shaped sign typically indicate?",
+      "options": {
+        "a5-5": {
+          "text": "Warning or caution",
+          "explanation": "Correct! Yellow diamond-shaped signs are warning signs that alert drivers to potential hazards ahead."
+        },
+        "a5-6": {
+          "text": "Mandatory instruction",
+          "explanation": "Mandatory signs are usually circular and blue. Diamond shapes are for warnings."
+        },
+        "a5-7": {
+          "text": "Information",
+          "explanation": "Information signs are usually rectangular. Diamond shapes indicate warnings."
+        },
+        "a5-8": {
+          "text": "Prohibition",
+          "explanation": "Prohibition signs are circular with red borders. Diamond shapes are warnings."
+        }
+      }
+    },
+    "q5-3": {
+      "question": "A solid white line in the center of the road means you can overtake if safe.",
+      "options": {
+        "a5-9": {
+          "text": "True",
+          "explanation": "False. A solid white line means overtaking is prohibited. You must not cross it."
+        },
+        "a5-10": {
+          "text": "False",
+          "explanation": "Correct! Solid white lines indicate no overtaking. You must stay in your lane."
+        }
+      }
+    },
+    "q5-4": {
+      "question": "What does a blue circular sign with a white arrow indicate?",
+      "options": {
+        "a5-11": {
+          "text": "Mandatory direction to follow",
+          "explanation": "Correct! Blue circular signs with white symbols indicate mandatory instructions that must be followed."
+        },
+        "a5-12": {
+          "text": "Optional direction",
+          "explanation": "Blue circular signs are mandatory, not optional."
+        },
+        "a5-13": {
+          "text": "Warning about direction",
+          "explanation": "Warnings are yellow diamond-shaped. Blue circular signs are mandatory."
+        },
+        "a5-14": {
+          "text": "Information about direction",
+          "explanation": "Information signs are rectangular. Blue circular signs are mandatory instructions."
+        }
+      }
+    },
+    "q5-5": {
+      "question": "You see a triangular sign with an exclamation mark. What should you do?",
+      "options": {
+        "a5-15": {
+          "text": "Proceed with caution and be alert for potential hazards",
+          "explanation": "Correct! Triangular signs with exclamation marks are general warning signs. Slow down and be prepared for unexpected situations."
+        },
+        "a5-16": {
+          "text": "Stop immediately",
+          "explanation": "This is a warning sign, not a stop sign. You should proceed with caution."
+        },
+        "a5-17": {
+          "text": "Speed up to clear the area quickly",
+          "explanation": "Warning signs require you to slow down and be cautious, not speed up."
+        },
+        "a5-18": {
+          "text": "Ignore it if the road looks clear",
+          "explanation": "Warning signs should always be heeded. They indicate potential hazards ahead."
+        }
+      }
+    },
+    "q5-6": {
+      "question": "What does a broken yellow line in the center of the road indicate?",
+      "options": {
+        "a5-19": {
+          "text": "Overtaking is allowed if safe",
+          "explanation": "Correct! A broken yellow line indicates that overtaking is permitted if done safely."
+        },
+        "a5-20": {
+          "text": "No overtaking allowed",
+          "explanation": "Solid lines mean no overtaking. Broken lines allow overtaking if safe."
+        },
+        "a5-21": {
+          "text": "One-way traffic only",
+          "explanation": "One-way roads have different markings. Broken yellow lines indicate overtaking is allowed."
+        },
+        "a5-22": {
+          "text": "Parking allowed",
+          "explanation": "Center line markings indicate overtaking rules, not parking."
+        }
+      }
+    },
+    "q5-7": {
+      "question": "A rectangular sign with green background typically provides information or directions.",
+      "options": {
+        "a5-23": {
+          "text": "True",
+          "explanation": "Correct! Green rectangular signs are informational signs that provide directions, distances, or other helpful information."
+        },
+        "a5-24": {
+          "text": "False",
+          "explanation": "False. Green rectangular signs are indeed informational signs used for directions and guidance."
+        }
+      }
+    },
+    "q5-8": {
+      "question": "What does a sign showing a person walking indicate?",
+      "options": {
+        "a5-25": {
+          "text": "Pedestrian crossing ahead",
+          "explanation": "Correct! A sign showing a person walking indicates a pedestrian crossing ahead. Slow down and be prepared to stop."
+        },
+        "a5-26": {
+          "text": "No pedestrians allowed",
+          "explanation": "This would be a prohibition sign. A walking person indicates a crossing area."
+        },
+        "a5-27": {
+          "text": "Pedestrian zone",
+          "explanation": "While related, this sign specifically indicates a crossing point ahead."
+        },
+        "a5-28": {
+          "text": "Walking path nearby",
+          "explanation": "This sign indicates a pedestrian crossing on the road ahead, not just a nearby path."
+        }
+      }
+    },
+    "q5-9": {
+      "question": "What is the meaning of a sign showing two arrows pointing in opposite directions?",
+      "options": {
+        "a5-29": {
+          "text": "Two-way traffic ahead",
+          "explanation": "Correct! Arrows pointing in opposite directions indicate two-way traffic ahead. Be cautious of oncoming vehicles."
+        },
+        "a5-30": {
+          "text": "U-turn allowed",
+          "explanation": "U-turn signs are different. This indicates two-way traffic."
+        },
+        "a5-31": {
+          "text": "No entry from both sides",
+          "explanation": "This is a warning about two-way traffic, not a prohibition."
+        },
+        "a5-32": {
+          "text": "Merge ahead",
+          "explanation": "Merge signs are different. This specifically indicates two-way traffic."
+        }
+      }
+    },
+    "q6-1": {
+      "question": "What is the validity period of a Pollution Under Control (PUC) certificate?",
+      "options": {
+        "a6-1": {
+          "text": "6 months for petrol vehicles, 3 months for diesel vehicles",
+          "explanation": "Correct! PUC certificates are valid for 6 months for petrol vehicles and 3 months for diesel vehicles."
+        },
+        "a6-2": {
+          "text": "1 year for all vehicles",
+          "explanation": "PUC validity varies by fuel type, not a uniform 1 year."
+        },
+        "a6-3": {
+          "text": "3 months for all vehicles",
+          "explanation": "Petrol vehicles have 6-month validity, not 3 months."
+        },
+        "a6-4": {
+          "text": "Valid until vehicle registration expires",
+          "explanation": "PUC certificates need periodic renewal, independent of registration."
+        }
+      }
+    },
+    "q6-2": {
+      "question": "You can drive a vehicle immediately after purchase without registration.",
+      "options": {
+        "a6-5": {
+          "text": "True",
+          "explanation": "False. All vehicles must be registered before they can be driven on public roads."
+        },
+        "a6-6": {
+          "text": "False",
+          "explanation": "Correct! Vehicles must be registered with the RTO before being driven on public roads. Temporary registration may be available for a limited period."
+        }
+      }
+    },
+    "q6-3": {
+      "question": "What is the penalty for driving without valid vehicle insurance?",
+      "options": {
+        "a6-7": {
+          "text": "Fine of ₹2,000 and/or imprisonment up to 3 months",
+          "explanation": "Correct! Driving without valid insurance can result in a fine of ₹2,000 and/or imprisonment up to 3 months."
+        },
+        "a6-8": {
+          "text": "Fine of ₹500 only",
+          "explanation": "The penalty is higher under the new Motor Vehicles Act."
+        },
+        "a6-9": {
+          "text": "Only a warning",
+          "explanation": "Driving without insurance is a serious offense with legal penalties."
+        },
+        "a6-10": {
+          "text": "Fine of ₹1,000",
+          "explanation": "The penalty is ₹2,000, not ₹1,000."
+        }
+      }
+    },
+    "q6-4": {
+      "question": "When must you renew your vehicle registration?",
+      "options": {
+        "a6-11": {
+          "text": "Every 15 years for private vehicles",
+          "explanation": "Correct! Private vehicle registration needs to be renewed every 15 years, or as specified by the transport authority."
+        },
+        "a6-12": {
+          "text": "Every 5 years",
+          "explanation": "Registration renewal is required every 15 years, not 5 years."
+        },
+        "a6-13": {
+          "text": "Every year",
+          "explanation": "Registration renewal is not annual. It\\"
+        },
+        "a6-14": {
+          "text": "Never - registration is permanent",
+          "explanation": "Vehicle registration requires periodic renewal."
+        }
+      }
+    },
+    "q6-5": {
+      "question": "Your vehicle registration certificate is lost. What should you do?",
+      "options": {
+        "a6-15": {
+          "text": "Apply for a duplicate registration certificate from the RTO",
+          "explanation": "Correct! You must apply for a duplicate registration certificate from the Regional Transport Office (RTO) where the vehicle is registered."
+        },
+        "a6-17": {
+          "text": "Wait until vehicle renewal",
+          "explanation": "You need the registration certificate now. Apply for a duplicate without delay."
+        },
+        "a6-18": {
+          "text": "Get a photocopy made",
+          "explanation": "You need an official duplicate certificate from the RTO, not just a photocopy."
+        }
+      }
+    },
+    "q6-6": {
+      "question": "What is third-party insurance and why is it mandatory?",
+      "options": {
+        "a6-19": {
+          "text": "Insurance that covers damage to other people and property, mandatory for all vehicles",
+          "explanation": "Correct! Third-party insurance covers liability for damage to other people and their property. It is mandatory for all vehicles in India."
+        },
+        "a6-20": {
+          "text": "Insurance for the vehicle owner only",
+          "explanation": "Third-party insurance covers others, not just the owner."
+        },
+        "a6-21": {
+          "text": "Optional insurance for luxury vehicles",
+          "explanation": "Third-party insurance is mandatory for all vehicles, not optional."
+        },
+        "a6-22": {
+          "text": "Insurance that covers only the vehicle",
+          "explanation": "Third-party insurance covers others, not your own vehicle."
+        }
+      }
+    },
+    "q6-7": {
+      "question": "You can transfer vehicle registration to another state without re-registration.",
+      "options": {
+        "a6-23": {
+          "text": "True",
+          "explanation": "False. When moving a vehicle to another state, you typically need to get it re-registered in the new state or obtain an inter-state permit."
+        },
+        "a6-24": {
+          "text": "False",
+          "explanation": "Correct! Vehicles registered in one state need to be re-registered when permanently moved to another state, or you need appropriate permits."
+        }
+      }
+    },
+    "q6-8": {
+      "question": "What happens if you drive with an expired PUC certificate?",
+      "options": {
+        "a6-25": {
+          "text": "Fine of ₹10,000 for first offense",
+          "explanation": "Correct! Driving with an expired PUC certificate can result in a fine of ₹10,000 for the first offense under the Motor Vehicles Act 2019."
+        },
+        "a6-26": {
+          "text": "Fine of ₹1,000",
+          "explanation": "The penalty is much higher - ₹10,000 for first offense."
+        },
+        "a6-27": {
+          "text": "Only a warning",
+          "explanation": "Expired PUC carries a significant fine, not just a warning."
+        },
+        "a6-28": {
+          "text": "No penalty",
+          "explanation": "Driving with expired PUC is a violation with monetary penalty."
+        }
+      }
+    },
+    "q6-9": {
+      "question": "What information is displayed on a vehicle registration number plate?",
+      "options": {
+        "a6-29": {
+          "text": "State code, district code, series, and unique number",
+          "explanation": "Correct! Indian vehicle registration plates show state code, district code, series, and a unique registration number."
+        },
+        "a6-30": {
+          "text": "Only the vehicle number",
+          "explanation": "Registration plates include state and district codes along with the number."
+        },
+        "a6-32": {
+          "text": "Vehicle model and year",
+          "explanation": "Registration plates show registration codes and numbers, not vehicle details."
+        }
+      }
+    },
+    "q6-10": {
+      "question": "You are buying a used vehicle. What documents should you verify before purchase?",
+      "options": {
+        "a6-33": {
+          "text": "Registration certificate, insurance, PUC, and verify no pending loans or theft reports",
+          "explanation": "Correct! When buying a used vehicle, verify registration certificate, valid insurance, PUC, and check for any pending loans or theft reports with the RTO."
+        },
+        "a6-34": {
+          "text": "Only the registration certificate",
+          "explanation": "You need to verify multiple documents including insurance, PUC, and check for encumbrances."
+        },
+        "a6-35": {
+          "text": "Registration and insurance only",
+          "explanation": "You should also verify PUC and check for any pending loans or legal issues."
+        }
+      }
+    },
+    "q7-1": {
+      "question": "Is wearing a helmet mandatory for two-wheeler riders in India?",
+      "options": {
+        "a7-1": {
+          "text": "Yes, mandatory for both rider and pillion",
+          "explanation": "Correct! Wearing a helmet is mandatory for both the rider and pillion passenger on two-wheelers in India."
+        },
+        "a7-2": {
+          "text": "Only for the rider, not pillion",
+          "explanation": "Helmets are mandatory for both rider and pillion passenger."
+        },
+        "a7-3": {
+          "text": "Only in cities, not on highways",
+          "explanation": "Helmet usage is mandatory everywhere, not just in cities."
+        },
+        "a7-4": {
+          "text": "Optional but recommended",
+          "explanation": "Helmets are mandatory, not optional."
+        }
+      }
+    },
+    "q7-2": {
+      "question": "What is the penalty for not wearing a helmet while riding a two-wheeler?",
+      "options": {
+        "a7-5": {
+          "text": "Fine of ₹1,000 and license suspension for 3 months",
+          "explanation": "Correct! Not wearing a helmet can result in a fine of ₹1,000 and suspension of driving license for 3 months."
+        },
+        "a7-6": {
+          "text": "Fine of ₹500 only",
+          "explanation": "The penalty is higher and includes license suspension."
+        },
+        "a7-7": {
+          "text": "Only a warning",
+          "explanation": "Not wearing a helmet carries significant penalties including license suspension."
+        },
+        "a7-8": {
+          "text": "Fine of ₹200",
+          "explanation": "The penalty is ₹1,000 plus license suspension."
+        }
+      }
+    },
+    "q7-3": {
+      "question": "Two-wheelers can carry more than two people if they are children.",
+      "options": {
+        "a7-9": {
+          "text": "True",
+          "explanation": "False. Two-wheelers are designed to carry maximum two people (rider and one pillion), regardless of age."
+        },
+        "a7-10": {
+          "text": "False",
+          "explanation": "Correct! Two-wheelers can only carry a maximum of two people - the rider and one pillion passenger, regardless of age."
+        }
+      }
+    },
+    "q7-4": {
+      "question": "What is the minimum age requirement for riding a two-wheeler with engine capacity above 50cc?",
+      "options": {
+        "a7-11": {
+          "text": "18 years",
+          "explanation": "Correct! You must be at least 18 years old to ride a two-wheeler with engine capacity above 50cc."
+        },
+        "a7-12": {
+          "text": "16 years",
+          "explanation": "16 years is for vehicles below 50cc. Above 50cc requires 18 years."
+        },
+        "a7-13": {
+          "text": "21 years",
+          "explanation": "18 years is the minimum age, not 21."
+        },
+        "a7-14": {
+          "text": "15 years",
+          "explanation": "15 years is too young. Minimum age is 18 years for vehicles above 50cc."
+        }
+      }
+    },
+    "q7-5": {
+      "question": "You are riding a motorcycle and need to make a turn. What should you do?",
+      "options": {
+        "a7-15": {
+          "text": "Signal your intention, check mirrors, and slow down before turning",
+          "explanation": "Correct! Always use indicators to signal your turn, check mirrors for traffic, and slow down before making the turn safely."
+        },
+        "a7-16": {
+          "text": "Just turn quickly",
+          "explanation": "You must signal and check for traffic before turning."
+        },
+        "a7-17": {
+          "text": "Honk and turn",
+          "explanation": "Honking is not a substitute for proper signaling and checking traffic."
+        },
+        "a7-18": {
+          "text": "Speed up to clear the turn faster",
+          "explanation": "You should slow down before turning, not speed up."
+        }
+      }
+    },
+    "q7-6": {
+      "question": "Can you ride a two-wheeler on the footpath?",
+      "options": {
+        "a7-19": {
+          "text": "No, footpaths are exclusively for pedestrians",
+          "explanation": "Correct! Footpaths are exclusively for pedestrians. Two-wheelers must use the road, not footpaths."
+        },
+        "a7-20": {
+          "text": "Yes, if the road is congested",
+          "explanation": "Footpaths are never for vehicles, regardless of traffic conditions."
+        },
+        "a7-21": {
+          "text": "Yes, if going slowly",
+          "explanation": "Footpaths are for pedestrians only, regardless of speed."
+        },
+        "a7-22": {
+          "text": "Yes, if no pedestrians are present",
+          "explanation": "Footpaths are exclusively for pedestrians, even when empty."
+        }
+      }
+    },
+    "q7-7": {
+      "question": "Two-wheelers can use bus lanes if they are empty.",
+      "options": {
+        "a7-23": {
+          "text": "True",
+          "explanation": "False. Bus lanes are reserved for buses. Other vehicles, including two-wheelers, cannot use them."
+        },
+        "a7-24": {
+          "text": "False",
+          "explanation": "Correct! Bus lanes are exclusively for buses. Two-wheelers and other vehicles cannot use them."
+        }
+      }
+    },
+    "q7-8": {
+      "question": "What is the maximum speed limit for two-wheelers in city areas?",
+      "options": {
+        "a7-25": {
+          "text": "50 km/h, same as other vehicles",
+          "explanation": "Correct! Two-wheelers have the same speed limit as other vehicles - typically 50 km/h in city areas."
+        },
+        "a7-26": {
+          "text": "40 km/h",
+          "explanation": "The speed limit for two-wheelers in cities is 50 km/h, not 40 km/h."
+        },
+        "a7-27": {
+          "text": "60 km/h",
+          "explanation": "60 km/h is too high for city areas. The limit is 50 km/h."
+        },
+        "a7-28": {
+          "text": "No specific limit for two-wheelers",
+          "explanation": "Two-wheelers must follow the same speed limits as other vehicles."
+        }
+      }
+    },
+    "q7-9": {
+      "question": "What should you do if your two-wheeler breaks down on the road?",
+      "options": {
+        "a7-29": {
+          "text": "Move to the side, turn on hazard lights if available, and seek help",
+          "explanation": "Correct! Move your vehicle to the side of the road, use hazard lights if available, and seek assistance without blocking traffic."
+        },
+        "a7-30": {
+          "text": "Leave it in the middle of the road",
+          "explanation": "Never leave a vehicle blocking traffic. Move it to the side."
+        },
+        "a7-31": {
+          "text": "Push it on the footpath",
+          "explanation": "Footpaths are for pedestrians. Move the vehicle to the roadside."
+        },
+        "a7-32": {
+          "text": "Abandon it and walk away",
+          "explanation": "You should secure your vehicle and seek help, not abandon it."
+        }
+      }
+    },
+    "q7-10": {
+      "question": "You are riding a motorcycle with a pillion passenger. The passenger is not wearing a helmet. Who is liable for the fine?",
+      "options": {
+        "a7-33": {
+          "text": "The rider is responsible for ensuring the pillion wears a helmet",
+          "explanation": "Correct! The rider is responsible for ensuring both rider and pillion passenger wear helmets. The rider can be fined if the pillion is not wearing a helmet."
+        },
+        "a7-34": {
+          "text": "Only the pillion passenger",
+          "explanation": "The rider is responsible for ensuring compliance with helmet rules."
+        },
+        "a7-35": {
+          "text": "Both equally",
+          "explanation": "The primary responsibility lies with the rider."
+        }
+      }
+    },
+    "q8-1": {
+      "question": "What is the maximum speed limit for cars on expressways?",
+      "options": {
+        "a8-1": {
+          "text": "120 km/h",
+          "explanation": "Correct! The maximum speed limit for cars on expressways is typically 120 km/h, though it may vary by specific expressway."
+        },
+        "a8-2": {
+          "text": "100 km/h",
+          "explanation": "100 km/h is for national highways. Expressways allow higher speeds."
+        },
+        "a8-3": {
+          "text": "80 km/h",
+          "explanation": "80 km/h is too low for expressways. The limit is 120 km/h."
+        },
+        "a8-4": {
+          "text": "No speed limit",
+          "explanation": "Expressways have speed limits. Typically 120 km/h for cars."
+        }
+      }
+    },
+    "q8-2": {
+      "question": "You can stop your vehicle on the expressway for taking photos.",
+      "options": {
+        "a8-5": {
+          "text": "True",
+          "explanation": "False. Stopping on expressways is prohibited except in emergencies or designated areas."
+        },
+        "a8-6": {
+          "text": "False",
+          "explanation": "Correct! Stopping on expressways is prohibited except in emergencies or at designated rest areas."
+        }
+      }
+    },
+    "q8-3": {
+      "question": "What should you do when entering a highway from an access road?",
+      "options": {
+        "a8-7": {
+          "text": "Yield to traffic already on the highway and merge safely",
+          "explanation": "Correct! When entering a highway, you must yield to traffic already on the highway and merge safely when there is a gap."
+        },
+        "a8-8": {
+          "text": "Enter immediately and force your way in",
+          "explanation": "You must yield to highway traffic and wait for a safe gap to merge."
+        },
+        "a8-9": {
+          "text": "Honk continuously until others give way",
+          "explanation": "You must yield and merge safely, not force your way in."
+        },
+        "a8-10": {
+          "text": "Speed up to match highway speed before entering",
+          "explanation": "While matching speed helps, you still must yield to existing traffic."
+        }
+      }
+    },
+    "q8-4": {
+      "question": "What is the minimum speed limit on expressways?",
+      "options": {
+        "a8-11": {
+          "text": "40 km/h",
+          "explanation": "Correct! Expressways typically have a minimum speed limit of 40 km/h to maintain traffic flow."
+        },
+        "a8-12": {
+          "text": "20 km/h",
+          "explanation": "20 km/h is too slow. Minimum is 40 km/h."
+        },
+        "a8-13": {
+          "text": "60 km/h",
+          "explanation": "60 km/h is not the minimum. The minimum is 40 km/h."
+        },
+        "a8-14": {
+          "text": "No minimum speed limit",
+          "explanation": "Expressways have minimum speed limits to ensure smooth traffic flow."
+        }
+      }
+    },
+    "q8-5": {
+      "question": "You are driving on an expressway and your vehicle develops a problem. What should you do?",
+      "options": {
+        "a8-15": {
+          "text": "Move to the emergency lane, turn on hazard lights, and seek help",
+          "explanation": "Correct! Move to the emergency lane, turn on hazard lights, place warning triangles if available, and call for assistance."
+        },
+        "a8-16": {
+          "text": "Stop in the middle lane",
+          "explanation": "Never stop in traffic lanes. Always move to the emergency lane."
+        },
+        "a8-17": {
+          "text": "Continue driving slowly",
+          "explanation": "If your vehicle has a problem, move to the emergency lane and stop safely."
+        },
+        "a8-18": {
+          "text": "Reverse to the nearest exit",
+          "explanation": "Reversing on expressways is extremely dangerous and illegal. Move to emergency lane instead."
+        }
+      }
+    },
+    "q8-6": {
+      "question": "You can make a U-turn on a highway if there is no oncoming traffic.",
+      "options": {
+        "a8-19": {
+          "text": "True",
+          "explanation": "False. U-turns are generally prohibited on highways. Use designated U-turn points or exits."
+        },
+        "a8-20": {
+          "text": "False",
+          "explanation": "Correct! U-turns are prohibited on highways. Use designated U-turn facilities or take the next exit."
+        }
+      }
+    },
+    "q8-7": {
+      "question": "What should you do when approaching a toll plaza on a highway?",
+      "options": {
+        "a8-21": {
+          "text": "Slow down, choose the correct lane, and have payment ready",
+          "explanation": "Correct! Approach toll plazas slowly, choose the appropriate lane (cash/Fastag), and have payment ready to avoid delays."
+        },
+        "a8-22": {
+          "text": "Speed up to get through quickly",
+          "explanation": "You should slow down at toll plazas, not speed up."
+        },
+        "a8-23": {
+          "text": "Skip the toll if no one is watching",
+          "explanation": "Toll payment is mandatory. Evading toll is illegal."
+        },
+        "a8-24": {
+          "text": "Stop in the middle lane",
+          "explanation": "Choose the appropriate lane and proceed through the toll plaza."
+        }
+      }
+    },
+    "q8-8": {
+      "question": "Can pedestrians walk on highways?",
+      "options": {
+        "a8-25": {
+          "text": "No, highways are exclusively for motorized vehicles",
+          "explanation": "Correct! Highways are exclusively for motorized vehicles. Pedestrians are not allowed on highways."
+        },
+        "a8-26": {
+          "text": "Yes, on the shoulder",
+          "explanation": "Pedestrians are not allowed on highways, even on shoulders."
+        },
+        "a8-27": {
+          "text": "Yes, if walking on the left side",
+          "explanation": "Pedestrians are prohibited on highways regardless of which side."
+        },
+        "a8-28": {
+          "text": "Yes, during daytime only",
+          "explanation": "Pedestrians are not allowed on highways at any time."
+        }
+      }
+    },
+    "q8-9": {
+      "question": "What is the recommended following distance on highways?",
+      "options": {
+        "a8-29": {
+          "text": "3-4 seconds gap",
+          "explanation": "Correct! On highways, maintain a 3-4 second gap from the vehicle ahead for safe following distance at higher speeds."
+        },
+        "a8-30": {
+          "text": "1 second gap",
+          "explanation": "1 second is too close for highway speeds. Use 3-4 seconds."
+        },
+        "a8-31": {
+          "text": "5 meters",
+          "explanation": "Following distance should be measured in time (seconds), not fixed meters, as it varies with speed."
+        },
+        "a8-32": {
+          "text": "No specific distance needed",
+          "explanation": "Maintaining proper following distance is essential for highway safety."
+        }
+      }
+    },
+    "q8-10": {
+      "question": "You are driving on a highway and see an animal crossing the road ahead. What should you do?",
+      "options": {
+        "a8-33": {
+          "text": "Slow down, honk gently, and stop if necessary to let the animal cross safely",
+          "explanation": "Correct! Slow down, use gentle honking to alert the animal, and be prepared to stop if needed. Never swerve suddenly as it can cause accidents."
+        },
+        "a8-34": {
+          "text": "Speed up to get past quickly",
+          "explanation": "Speeding up is dangerous. Slow down and allow the animal to cross safely."
+        },
+        "a8-35": {
+          "text": "Swerve to avoid the animal",
+          "explanation": "Sudden swerving can cause loss of control. Slow down and stop if necessary."
+        },
+        "a8-36": {
+          "text": "Continue at the same speed",
+          "explanation": "You must slow down when you see an animal crossing to avoid collision."
+        }
+      }
+    },
+    "q9-1": {
+      "question": "Who has the right of way at a zebra crossing (pedestrian crossing)?",
+      "options": {
+        "a9-1": {
+          "text": "Pedestrians have the right of way",
+          "explanation": "Correct! At zebra crossings, pedestrians have the right of way. Vehicles must stop and allow pedestrians to cross safely."
+        },
+        "a9-2": {
+          "text": "Vehicles have the right of way",
+          "explanation": "Pedestrians have priority at designated crossings."
+        },
+        "a9-3": {
+          "text": "Whoever arrives first",
+          "explanation": "Right of way is determined by road user type, not arrival time. Pedestrians have priority."
+        },
+        "a9-4": {
+          "text": "Larger vehicles have priority",
+          "explanation": "Vehicle size does not determine right of way. Pedestrians have priority at crossings."
+        }
+      }
+    },
+    "q9-2": {
+      "question": "You must stop your vehicle when a pedestrian is waiting to cross at a zebra crossing.",
+      "options": {
+        "a9-5": {
+          "text": "True",
+          "explanation": "Correct! You must stop and allow pedestrians to cross when they are waiting at a zebra crossing."
+        },
+        "a9-6": {
+          "text": "False",
+          "explanation": "False. You must stop for pedestrians at zebra crossings, even if they are just waiting."
+        }
+      }
+    },
+    "q9-3": {
+      "question": "What should you do when you see a cyclist on the road?",
+      "options": {
+        "a9-7": {
+          "text": "Give them adequate space, maintain safe distance, and overtake carefully",
+          "explanation": "Correct! Cyclists are vulnerable road users. Give them adequate space (at least 1.5 meters), maintain safe distance, and overtake only when safe."
+        },
+        "a9-8": {
+          "text": "Honk continuously to make them move",
+          "explanation": "Honking aggressively at cyclists is dangerous and disrespectful. Give them space instead."
+        },
+        "a9-9": {
+          "text": "Drive very close to push them aside",
+          "explanation": "This is extremely dangerous and illegal. Always maintain safe distance from cyclists."
+        },
+        "a9-10": {
+          "text": "Ignore them and drive normally",
+          "explanation": "You must be extra cautious around cyclists and give them proper space."
+        }
+      }
+    },
+    "q9-4": {
+      "question": "What is the minimum safe distance you should maintain when overtaking a cyclist?",
+      "options": {
+        "a9-11": {
+          "text": "At least 1.5 meters",
+          "explanation": "Correct! When overtaking a cyclist, maintain at least 1.5 meters of lateral distance for safety."
+        },
+        "a9-12": {
+          "text": "50 centimeters",
+          "explanation": "50 cm is too close and dangerous. Minimum is 1.5 meters."
+        },
+        "a9-13": {
+          "text": "1 meter",
+          "explanation": "1 meter is still too close. The recommended minimum is 1.5 meters."
+        },
+        "a9-14": {
+          "text": "No specific distance required",
+          "explanation": "Maintaining adequate distance (1.5 meters) is essential for cyclist safety."
+        }
+      }
+    },
+    "q9-5": {
+      "question": "You are driving and see a group of school children crossing the road ahead. What should you do?",
+      "options": {
+        "a9-15": {
+          "text": "Stop completely, wait for all children to cross safely, and proceed only when the road is clear",
+          "explanation": "Correct! Children are unpredictable. Stop completely, wait for all children to cross safely, and only proceed when the road is completely clear."
+        },
+        "a9-16": {
+          "text": "Slow down and proceed if they look ready",
+          "explanation": "You should stop completely for children, not just slow down."
+        },
+        "a9-17": {
+          "text": "Honk to make them hurry",
+          "explanation": "Never honk at children. Stop and wait patiently for them to cross."
+        },
+        "a9-18": {
+          "text": "Speed up to pass before they reach your lane",
+          "explanation": "This is extremely dangerous. Always stop for children crossing."
+        }
+      }
+    },
+    "q9-6": {
+      "question": "Can cyclists ride on footpaths?",
+      "options": {
+        "a9-19": {
+          "text": "No, footpaths are exclusively for pedestrians",
+          "explanation": "Correct! Footpaths are exclusively for pedestrians. Cyclists must use the road, not footpaths."
+        },
+        "a9-20": {
+          "text": "Yes, if going slowly",
+          "explanation": "Footpaths are for pedestrians only, regardless of speed."
+        },
+        "a9-21": {
+          "text": "Yes, if no pedestrians are present",
+          "explanation": "Footpaths are exclusively for pedestrians, even when empty."
+        },
+        "a9-22": {
+          "text": "Yes, in all areas",
+          "explanation": "Cyclists must use the road, not footpaths."
+        }
+      }
+    },
+    "q9-7": {
+      "question": "Pedestrians can cross the road anywhere if there is no traffic.",
+      "options": {
+        "a9-23": {
+          "text": "True",
+          "explanation": "False. Pedestrians should use designated crossings, zebra crossings, or cross at intersections for safety."
+        },
+        "a9-24": {
+          "text": "False",
+          "explanation": "Correct! While pedestrians may cross at various points, they should use designated crossings whenever available for their own safety and to follow traffic rules."
+        }
+      }
+    },
+    "q9-8": {
+      "question": "What should you do when approaching a school zone?",
+      "options": {
+        "a9-25": {
+          "text": "Reduce speed to 25 km/h, be extra vigilant for children, and be prepared to stop",
+          "explanation": "Correct! In school zones, reduce speed to 25 km/h, be extremely vigilant for children who may dart into the road, and always be prepared to stop."
+        },
+        "a9-26": {
+          "text": "Maintain normal speed",
+          "explanation": "You must reduce speed in school zones for children\\"
+        },
+        "a9-27": {
+          "text": "Speed up to clear the area quickly",
+          "explanation": "You should slow down in school zones, not speed up."
+        },
+        "a9-28": {
+          "text": "Only slow down if children are visible",
+          "explanation": "You must reduce speed in school zones regardless of visible children."
+        }
+      }
+    },
+    "q9-9": {
+      "question": "What is the penalty for not giving way to pedestrians at a zebra crossing?",
+      "options": {
+        "a9-29": {
+          "text": "Fine of ₹500 and license suspension for 3 months",
+          "explanation": "Correct! Not giving way to pedestrians at zebra crossings can result in a fine of ₹500 and suspension of driving license for 3 months."
+        },
+        "a9-30": {
+          "text": "Fine of ₹200 only",
+          "explanation": "The penalty is higher and includes license suspension."
+        },
+        "a9-31": {
+          "text": "Only a warning",
+          "explanation": "This violation carries significant penalties including license suspension."
+        },
+        "a9-32": {
+          "text": "Fine of ₹1,000",
+          "explanation": "The fine is ₹500, but it also includes license suspension."
+        }
+      }
+    },
+    "q9-10": {
+      "question": "You are driving at night and see a pedestrian walking on the road edge (no footpath available). What should you do?",
+      "options": {
+        "a9-33": {
+          "text": "Slow down, use low beam headlights, give wide berth, and be prepared to stop",
+          "explanation": "Correct! When encountering pedestrians on road edges at night, slow down, use low beam to avoid blinding them, give them wide space, and be prepared to stop if needed."
+        },
+        "a9-34": {
+          "text": "Use high beam to make them visible",
+          "explanation": "High beam can blind pedestrians. Use low beam instead."
+        },
+        "a9-35": {
+          "text": "Honk continuously to alert them",
+          "explanation": "Excessive honking can startle pedestrians. Slow down and give space instead."
+        },
+        "a9-36": {
+          "text": "Speed up to pass quickly",
+          "explanation": "You should slow down and give adequate space to pedestrians, especially at night."
+        }
+      }
+    },
+    "q10-1": {
+      "question": "On a multi-lane city road, which lane should you use for normal driving?",
+      "options": {
+        "a10-1": {
+          "text": "Left lane for normal driving, right lane for overtaking",
+          "explanation": "Correct! On multi-lane roads, use the left lane for normal driving and the right lane for overtaking. Keep right lanes clear for faster traffic."
+        },
+        "a10-2": {
+          "text": "Right lane for normal driving",
+          "explanation": "Right lanes are for overtaking. Use left lane for normal driving."
+        },
+        "a10-3": {
+          "text": "Any lane you prefer",
+          "explanation": "Lane discipline is important. Left lane for normal driving, right for overtaking."
+        },
+        "a10-4": {
+          "text": "Middle lane always",
+          "explanation": "Left lane is for normal driving. Middle and right lanes are for overtaking."
+        }
+      }
+    },
+    "q10-2": {
+      "question": "You can drive in the rightmost lane continuously on a highway if you are going at the speed limit.",
+      "options": {
+        "a10-5": {
+          "text": "True",
+          "explanation": "False. Rightmost lanes are for overtaking. After overtaking, you should return to the left lane."
+        },
+        "a10-6": {
+          "text": "False",
+          "explanation": "Correct! Rightmost lanes are for overtaking only. After completing an overtake, move back to the left lane to keep right lanes clear for faster traffic."
+        }
+      }
+    },
+    "q10-3": {
+      "question": "What should you do before changing lanes?",
+      "options": {
+        "a10-7": {
+          "text": "Check mirrors, signal your intention, check blind spot, then change lane smoothly",
+          "explanation": "Correct! Before changing lanes: check rearview and side mirrors, use indicators to signal, check blind spot, ensure safe gap, then change lane smoothly."
+        },
+        "a10-8": {
+          "text": "Just signal and change",
+          "explanation": "You must check mirrors and blind spot in addition to signaling."
+        },
+        "a10-9": {
+          "text": "Change quickly without signaling",
+          "explanation": "Always signal and check before changing lanes. Sudden lane changes are dangerous."
+        },
+        "a10-10": {
+          "text": "Honk and change lane",
+          "explanation": "Use indicators to signal, not just honking. Also check mirrors and blind spot."
+        }
+      }
+    },
+    "q10-4": {
+      "question": "You are driving on a 3-lane expressway. You want to overtake a slow vehicle. Which lane should you use?",
+      "options": {
+        "a10-11": {
+          "text": "Move to the right lane, overtake, then return to left lane",
+          "explanation": "Correct! On expressways, use the rightmost lane for overtaking. After completing the overtake, return to the left lane to keep right lanes clear."
+        },
+        "a10-12": {
+          "text": "Overtake from the left lane",
+          "explanation": "Overtaking should be done from the right side, not left."
+        },
+        "a10-13": {
+          "text": "Stay in your current lane and honk",
+          "explanation": "You should change to the right lane to overtake safely."
+        },
+        "a10-14": {
+          "text": "Use the middle lane and stay there",
+          "explanation": "Use right lane for overtaking, then return to left lane."
+        }
+      }
+    },
+    "q10-5": {
+      "question": "On a city road with two lanes, which lane should slower vehicles use?",
+      "options": {
+        "a10-15": {
+          "text": "Left lane",
+          "explanation": "Correct! Slower vehicles should use the left lane, keeping the right lane free for faster traffic and overtaking."
+        },
+        "a10-16": {
+          "text": "Right lane",
+          "explanation": "Right lane is for faster traffic and overtaking. Slower vehicles should use left lane."
+        },
+        "a10-17": {
+          "text": "Either lane",
+          "explanation": "Lane discipline requires slower vehicles to use the left lane."
+        },
+        "a10-18": {
+          "text": "Middle of both lanes",
+          "explanation": "Stay in your lane. Slower vehicles use left lane."
+        }
+      }
+    },
+    "q10-6": {
+      "question": "You can overtake from the left side if the vehicle ahead is turning right.",
+      "options": {
+        "a10-19": {
+          "text": "True",
+          "explanation": "False. Overtaking from the left is generally prohibited in India, even if the vehicle ahead is turning right."
+        },
+        "a10-20": {
+          "text": "False",
+          "explanation": "Correct! Overtaking from the left is prohibited. You must wait for the vehicle to complete its turn, then overtake from the right if safe."
+        }
+      }
+    },
+    "q10-7": {
+      "question": "What is the rule for lane usage on expressways?",
+      "options": {
+        "a10-21": {
+          "text": "Left lane for normal driving, right lanes for overtaking only",
+          "explanation": "Correct! On expressways, use the leftmost lane for normal driving. Right lanes are reserved for overtaking. After overtaking, return to the left lane."
+        },
+        "a10-22": {
+          "text": "Use any lane you want",
+          "explanation": "Expressways have strict lane discipline. Left for normal driving, right for overtaking."
+        },
+        "a10-23": {
+          "text": "Right lane for fast driving",
+          "explanation": "Right lanes are for overtaking, not continuous fast driving. Return to left after overtaking."
+        },
+        "a10-24": {
+          "text": "Middle lane is safest",
+          "explanation": "Left lane is for normal driving. Middle and right lanes are for overtaking."
+        }
+      }
+    },
+    "q10-8": {
+      "question": "You are in the left lane on a highway. A vehicle behind you is flashing headlights. What should you do?",
+      "options": {
+        "a10-25": {
+          "text": "If safe, move to the left or slow down slightly to allow overtaking from the right",
+          "explanation": "Correct! When a faster vehicle wants to overtake, maintain your speed or slow slightly, and allow them to overtake from the right. Do not speed up or block them."
+        },
+        "a10-26": {
+          "text": "Speed up to prevent being overtaken",
+          "explanation": "Do not speed up. Allow faster vehicles to overtake safely."
+        },
+        "a10-27": {
+          "text": "Move to the right lane to block them",
+          "explanation": "Do not block overtaking vehicles. Stay in left lane and allow them to pass."
+        },
+        "a10-28": {
+          "text": "Ignore them and continue",
+          "explanation": "You should be courteous and allow faster vehicles to overtake safely."
+        }
+      }
+    },
+    "q10-9": {
+      "question": "What is the penalty for wrong-side driving or lane violation?",
+      "options": {
+        "a10-29": {
+          "text": "Fine of ₹5,000 and/or imprisonment up to 6 months",
+          "explanation": "Correct! Wrong-side driving or serious lane violations can result in a fine of ₹5,000 and/or imprisonment up to 6 months."
+        },
+        "a10-30": {
+          "text": "Fine of ₹1,000 only",
+          "explanation": "The penalty is much higher for lane violations."
+        },
+        "a10-31": {
+          "text": "Only a warning",
+          "explanation": "Lane violations carry significant penalties including possible imprisonment."
+        },
+        "a10-32": {
+          "text": "Fine of ₹500",
+          "explanation": "The penalty is ₹5,000, not ₹500."
+        }
+      }
+    },
+    "q10-10": {
+      "question": "On a 4-lane expressway, which lane should heavy vehicles like trucks use?",
+      "options": {
+        "a10-33": {
+          "text": "Leftmost lane only, right lanes are for lighter and faster vehicles",
+          "explanation": "Correct! Heavy vehicles like trucks should use the leftmost lane on expressways. Right lanes are reserved for lighter and faster vehicles for overtaking."
+        },
+        "a10-34": {
+          "text": "Rightmost lane for faster travel",
+          "explanation": "Heavy vehicles should use leftmost lane, not rightmost."
+        },
+        "a10-35": {
+          "text": "Any lane they prefer",
+          "explanation": "Heavy vehicles must use leftmost lane to keep right lanes clear for faster traffic."
+        },
+        "a10-36": {
+          "text": "Middle lanes",
+          "explanation": "Heavy vehicles should use the leftmost lane, keeping middle and right lanes for overtaking."
+        }
+      }
+    },
+    "q5-10": {
+      "question": "You see a red octagonal sign with \"STOP\" written on it. What must you do?",
+      "options": {
+        "a5-33": {
+          "text": "Come to a complete stop, check for traffic, then proceed when safe",
+          "explanation": "Correct! A STOP sign requires a complete stop. After stopping, check all directions for traffic and proceed only when safe."
+        },
+        "a5-34": {
+          "text": "Slow down and proceed if clear",
+          "explanation": "STOP signs require a complete stop, not just slowing down."
+        },
+        "a5-35": {
+          "text": "Stop only if other vehicles are present",
+          "explanation": "You must stop at a STOP sign regardless of other traffic."
+        },
+        "a5-36": {
+          "text": "Honk and proceed",
+          "explanation": "STOP signs require a complete stop. Honking does not replace stopping."
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,14 @@
 'use client';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { BookOpen, Target, Trophy, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HomePage() {
+  const t = useTranslations('common');
+  
   const features = [
     {
       icon: BookOpen,
@@ -48,12 +51,12 @@ export default function HomePage() {
         <div className="flex gap-4 justify-center">
           <Link href="/game">
             <Button variant="primary" size="lg">
-              Start Learning
+              {t('start')} Learning
             </Button>
           </Link>
           <Link href="/results">
             <Button variant="outline" size="lg">
-              View Results
+              View {t('results')}
             </Button>
           </Link>
         </div>
@@ -97,11 +100,11 @@ export default function HomePage() {
         <Card variant="elevated" className="bg-gradient-to-r from-primary-600 to-primary-700 text-white">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold mb-2">4+</div>
+              <div className="text-4xl font-bold mb-2">10+</div>
               <div className="text-primary-100">Scenarios</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">10+</div>
+              <div className="text-4xl font-bold mb-2">100+</div>
               <div className="text-primary-100">Questions</div>
             </div>
             <div>
@@ -114,4 +117,3 @@ export default function HomePage() {
     </div>
   );
 }
-

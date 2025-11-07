@@ -458,6 +458,12 @@ body {
   z-index: 1;
 }
 
+/* Ensure search input doesn't overlap language dropdown */
+input[type="text"].search-input {
+  position: relative;
+  z-index: 10;
+}
+
 /* Position utilities */
 .left-3 { left: 0.75rem; }
 .top-1\/2 { top: 50%; }

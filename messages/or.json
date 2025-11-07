@@ -1,0 +1,135 @@
+{
+  "common": {
+    "appName": "Indian Road Laws",
+    "chooseScenario": "Choose a Scenario",
+    "selectScenario": "Select a scenario to start learning about Indian road driving laws",
+    "searchScenarios": "Search scenarios...",
+    "allDifficulties": "All Difficulties",
+    "allCategories": "All Categories",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "noScenariosFound": "No scenarios found matching your criteria.",
+    "start": "Start",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "finish": "Finish",
+    "retry": "Retry",
+    "home": "Home",
+    "game": "Game",
+    "results": "Results",
+    "stats": "Stats",
+    "language": "Language",
+    "to": "to",
+    "question": "Question",
+    "scenario": "Scenario",
+    "loading": "Loading scenario...",
+    "backToScenarios": "Back to Scenarios"
+  },
+  "game": {
+    "question": "Question",
+    "of": "of",
+    "points": "points",
+    "selectAnswer": "Select an answer",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "explanation": "Explanation",
+    "lawReference": "Law Reference",
+    "yourAnswer": "Your Answer",
+    "correctAnswer": "Correct Answer",
+    "score": "Score",
+    "timeTaken": "Time Taken",
+    "completed": "Completed",
+    "estimatedTime": "Estimated Time",
+    "questions": "Questions",
+    "category": "Category",
+    "difficulty": "Difficulty",
+    "tags": "Tags",
+    "answered": "Answered",
+    "submitAnswer": "Submit Answer",
+    "noExplanation": "No explanation available.",
+    "minutes": "min",
+    "scenario": "Scenario",
+    "categories": {
+      "Traffic Rules": "Traffic Rules",
+      "Speed & Overtaking": "Speed & Overtaking",
+      "Parking Rules": "Parking Rules",
+      "Legal Compliance": "Legal Compliance",
+      "Road Signs": "Road Signs",
+      "Vehicle Documents": "Vehicle Documents",
+      "Two-Wheeler Rules": "Two-Wheeler Rules",
+      "Highway Rules": "Highway Rules",
+      "Pedestrian & Cyclist Rights": "Pedestrian & Cyclist Rights",
+      "Lane Discipline": "Lane Discipline"
+    }
+  },
+  "scenarios": {
+    "scenario-1": {
+      "title": "Traffic Signals and Right of Way",
+      "description": "Learn about traffic signals, right of way rules, and intersection behavior according to Indian traffic laws."
+    },
+    "scenario-2": {
+      "title": "Speed Limits and Overtaking",
+      "description": "Understand speed limits in different zones and safe overtaking procedures as per Indian traffic regulations."
+    },
+    "scenario-3": {
+      "title": "Parking Rules and Regulations",
+      "description": "Master parking rules, no-parking zones, and penalties for parking violations in India."
+    },
+    "scenario-4": {
+      "title": "Driving Under Influence and Penalties",
+      "description": "Understand the legal blood alcohol limits, penalties for drunk driving, and related offenses."
+    },
+    "scenario-5": {
+      "title": "Road Signs and Markings",
+      "description": "Learn about various road signs, lane markings, and their meanings according to Indian traffic regulations."
+    },
+    "scenario-6": {
+      "title": "Vehicle Documents and Registration",
+      "description": "Understand vehicle registration, insurance, pollution certificates, and required documents for driving in India."
+    },
+    "scenario-7": {
+      "title": "Two-Wheeler Specific Rules",
+      "description": "Learn about special rules and regulations for motorcycles, scooters, and two-wheelers in India."
+    },
+    "scenario-8": {
+      "title": "Highway and Expressway Rules",
+      "description": "Learn about special rules, speed limits, and safety regulations for highways and expressways in India."
+    },
+    "scenario-9": {
+      "title": "Pedestrian and Cyclist Rights",
+      "description": "Understand the rights of pedestrians and cyclists, and how drivers should interact with them on Indian roads."
+    },
+    "scenario-10": {
+      "title": "Lane Driving and Overtaking Rules",
+      "description": "Master lane discipline, lane changing, and overtaking rules for city roads, highways, and expressways in India."
+    }
+  },
+  "questions": {},
+  "results": {
+    "yourResults": "Your Results",
+    "totalScore": "Total Score",
+    "scenariosCompleted": "Scenarios Completed",
+    "averageScore": "Average Score",
+    "totalQuestions": "Total Questions",
+    "correctAnswers": "Correct Answers",
+    "incorrectAnswers": "Incorrect Answers",
+    "viewDetails": "View Details",
+    "playAgain": "Play Again",
+    "scenarioComplete": "Scenario Complete!",
+    "questionBreakdown": "Question Breakdown",
+    "yourAnswer": "Your answer",
+    "notAnswered": "Not answered",
+    "viewAllResults": "View All Results"
+  },
+  "stats": {
+    "yourStatistics": "Your Statistics",
+    "overallPerformance": "Overall Performance",
+    "scenariosPlayed": "Scenarios Played",
+    "totalTime": "Total Time",
+    "bestScore": "Best Score",
+    "improvement": "Improvement"
+  }
+}
