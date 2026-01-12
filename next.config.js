@@ -5,4 +5,4 @@ const nextConfig = {
   // API routes are automatically handled by Next.js
 }
 
-module.exports = nextConfig
+export default nextConfig
