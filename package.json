@@ -1,26 +1,34 @@
 {
   "name": "ucp-hotel-booking-app",
   "version": "1.0.0",
-  "description": "Hotel booking application using Universal Commerce Protocol (UCP)",
-  "main": "server/index.js",
+  "description": "Hotel booking application using Universal Commerce Protocol (UCP) with Next.js 16",
+  "private": true,
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "keywords": [
     "ucp",
     "hotel",
     "booking",
-    "commerce"
+    "commerce",
+    "nextjs"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "body-parser": "^1.20.2"
+    "next": "^16.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "typescript": "^5.3.3"
   }
 }
