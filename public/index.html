@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking - UCP Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🏨 HotelBooking</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#" class="nav-link active">Hotels</a>
+                    <a href="#" class="nav-link">My Bookings</a>
+                    <a href="#" class="nav-link">Help</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Natural Language Search Box -->
+    <section class="nl-search-section">
+        <div class="container">
+            <div class="nl-search-box">
+                <div class="nl-search-header">
+                    <h3>🤖 AI-Powered Booking</h3>
+                    <p>Try: "book a hotel in Jakarta checkin 2026-01-15 checkout 2026-01-16 for 2 guests with 4.5 star rating. book the executive suite for guest named vipul with email guest@m.com and phone number 9009900900"</p>
+                </div>
+                <div class="nl-search-input-wrapper">
+                    <input type="text" id="nlSearchInput" class="nl-search-input" 
+                           placeholder="Tell me what you need... e.g., book a hotel in Bali checkin 2026-01-20 checkout 2026-01-22 for 2 guests with 4.5 star rating. book the deluxe room for guest named John with email john@example.com and phone number 1234567890"
+                           onkeypress="if(event.key === 'Enter') processNaturalLanguageQuery()" />
+                    <button class="btn-nl-search" onclick="processNaturalLanguageQuery()">
+                        <span>🚀 Book Now</span>
+                    </button>
+                </div>
+                <div id="nlSearchStatus" class="nl-search-status"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Search Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Find Your Perfect Stay</h2>
+                <p class="hero-subtitle">Book hotels with ease using Universal Commerce Protocol</p>
+                
+                <div class="search-box">
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label>Location</label>
+                            <input type="text" id="locationInput" placeholder="Where are you going?" />
+                        </div>
+                        <div class="search-field">
+                            <label>Check-in</label>
+                            <input type="date" id="checkInInput" />
+                        </div>
+                        <div class="search-field">
+                            <label>Check-out</label>
+                            <input type="date" id="checkOutInput" />
+                        </div>
+                        <div class="search-field">
+                            <label>Guests</label>
+                            <select id="guestsInput">
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                            </select>
+                        </div>
+                        <button class="btn-search" onclick="searchHotels()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <div class="price-range">
+                        <input type="range" id="priceMin" min="0" max="2000000" value="0" step="100000" />
+                        <input type="range" id="priceMax" min="0" max="2000000" value="2000000" step="100000" />
+                        <div class="price-display">
+                            <span id="priceMinDisplay">Rp 0</span> - <span id="priceMaxDisplay">Rp 2,000,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Rating</label>
+                    <div class="rating-filter">
+                        <button class="rating-btn" data-rating="4.5">4.5+ ⭐</button>
+                        <button class="rating-btn" data-rating="4.0">4.0+ ⭐</button>
+                        <button class="rating-btn" data-rating="0">All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels List -->
+    <section class="hotels-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Hotels</h2>
+                <p id="hotelCount">Loading hotels...</p>
+            </div>
+            <div id="hotelsList" class="hotels-grid">
+                <!-- Hotels will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel Details Modal -->
+    <div id="hotelModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="hotelDetails"></div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <div id="bookingDetails"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

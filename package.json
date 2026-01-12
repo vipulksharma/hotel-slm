@@ -1,35 +1,26 @@
 {
-  "name": "indian-road-laws-game",
+  "name": "ucp-hotel-booking-app",
   "version": "1.0.0",
-  "private": true,
+  "description": "Hotel booking application using Universal Commerce Protocol (UCP)",
+  "main": "server/index.js",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "android:setup": "bash scripts/setup-bubblewrap.sh",
-    "android:init": "bubblewrap init --manifest=https://localhost:3000/manifest.json",
-    "android:build": "bubblewrap build"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
+  "keywords": [
+    "ucp",
+    "hotel",
+    "booking",
+    "commerce"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "framer-motion": "^11.0.0",
-    "lucide-react": "^0.460.0",
-    "next": "^16.0.0",
-    "next-intl": "^4.4.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "zustand": "^5.0.0"
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.1.0",
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "eslint": "^9.0.0",
-    "eslint-config-next": "^16.0.0",
-    "typescript": "^5.7.0"
-  },
-  "engines": {
-    "node": ">=20.9.0"
+    "nodemon": "^3.0.1"
   }
 }

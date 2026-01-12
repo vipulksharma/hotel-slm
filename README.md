@@ -1,79 +1,172 @@
-# Indian Road Laws Learning Game
+# UCP Hotel Booking Application
 
-An interactive educational game built with Next.js to help users learn Indian road driving laws through engaging scenarios and quizzes.
+A sample hotel booking application built with Node.js and the Universal Commerce Protocol (UCP), featuring a modern UI inspired by tiket.com/hotel.
 
-## Architecture Overview
+## Overview
 
-### Project Structure
-```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Home page
-│   ├── game/              # Game routes
-│   │   ├── page.tsx       # Game lobby
-│   │   └── [scenarioId]/  # Individual scenario pages
-│   ├── results/           # Results and leaderboard
-│   └── globals.css        # Global styles
-├── components/            # React components
-│   ├── game/             # Game-specific components
-│   ├── ui/               # Reusable UI components
-│   └── layout/           # Layout components
-├── store/                # Zustand state management
-│   └── gameStore.ts      # Game state store
-├── types/                # TypeScript type definitions
-│   └── game.ts           # Game-related types
-├── data/                 # Game data and scenarios
-│   └── scenarios.ts      # Road law scenarios
-└── lib/                  # Utility functions
-    └── utils.ts          # Helper functions
-```
+This application demonstrates how to implement a hotel booking system using UCP (Universal Commerce Protocol), an open-source standard designed to power agentic commerce experiences. The app includes:
+
+- **Backend API**: Node.js/Express server with UCP-compliant endpoints
+- **Frontend**: Modern, responsive web interface inspired by tiket.com/hotel
+- **UCP Integration**: Full support for discovery, checkout, and booking capabilities
+- **Hardcoded Data**: Sample hotels and rooms for demonstration
 
 ## Features
 
-- **Interactive Scenarios**: Real-world driving situations with multiple choice questions
-- **Progress Tracking**: Track learning progress and scores
-- **Level System**: Progressive difficulty levels
-- **Immediate Feedback**: Instant feedback on answers with explanations
-- **Score System**: Points and achievements
-- **Responsive Design**: Works on all devices
+- 🔍 Hotel search and filtering by location, price, and rating
+- 🏨 Detailed hotel information with room listings
+- 💳 UCP-compliant checkout process
+- 🎟️ Discount code support (WELCOME10, SUMMER20, EARLYBIRD15)
+- 📱 Responsive design for mobile and desktop
+- ✅ Booking confirmation with unique confirmation numbers
 
-## Getting Started
+## Project Structure
 
-1. Install dependencies:
-```bash
-pnpm install
+```
+.
+├── server/
+│   ├── index.js              # Express server and API routes
+│   ├── data/
+│   │   └── hotels.js         # Hardcoded hotel and room data
+│   └── services/
+│       ├── discovery.js      # UCP discovery service
+│       └── checkout.js       # UCP checkout service
+├── public/
+│   ├── index.html            # Main HTML page
+│   ├── styles.css            # Styling
+│   └── app.js                # Frontend JavaScript
+├── package.json              # Dependencies
+└── README.md                 # This file
 ```
 
-2. Run the development server:
+## Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+## Installation
+
+1. Clone or navigate to the project directory:
 ```bash
-pnpm dev
+cd /Users/vipulsharma/projects/automation
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Tech Stack
+## Running the Application
 
-- **Next.js 16** - React framework with App Router, Turbopack, and PPR
-- **React 19** - Latest React with improved performance
-- **TypeScript 5.7** - Type safety with latest features
-- **Global CSS** - Custom CSS styling with CSS variables
-- **Zustand 5** - State management with persistence
-- **Framer Motion** - Animations and transitions
-- **Lucide React** - Modern icon library
-- **pnpm** - Fast, disk space efficient package manager
+1. Start the server:
+```bash
+npm start
+```
 
-## Requirements
+For development with auto-reload:
+```bash
+npm run dev
+```
 
-- **Node.js**: 20.9.0 or later
-- **pnpm**: Latest version recommended
+2. Open your browser and navigate to:
+```
+http://localhost:3000
+```
 
-## Next.js 16 Features
+The server will start on port 3000 by default. You can change this by setting the `PORT` environment variable.
 
-This project leverages Next.js 16 features:
-- **Turbopack**: Faster development builds (enabled by default)
-- **Partial Prerendering (PPR)**: Incremental static generation for better performance
-- **React 19**: Latest React features and optimizations
-- **Enhanced Metadata API**: Improved SEO and social sharing
-- **ESLint Flat Config**: Modern ESLint configuration format
+## API Endpoints
 
+### UCP Endpoints
+
+- `GET /ucp/profile` - Discover business capabilities (UCP discovery)
+- `POST /checkout-sessions` - Create a new checkout session
+- `PUT /checkout-sessions/:id` - Update checkout session (e.g., apply discounts)
+- `POST /checkout-sessions/:id/complete` - Complete checkout and create booking
+
+### Hotel Endpoints
+
+- `GET /api/hotels` - Get all hotels (supports query params: location, minPrice, maxPrice, rating)
+- `GET /api/hotels/:id` - Get hotel details with rooms
+- `GET /api/hotels/:id/rooms` - Get available rooms for a hotel
+- `GET /api/bookings/:id` - Get booking details
+
+### Health Check
+
+- `GET /health` - Server health check
+
+## UCP Implementation
+
+This application implements UCP capabilities:
+
+1. **Discovery**: Business capabilities are exposed via `/ucp/profile`
+2. **Checkout**: Full checkout flow with line items, totals, and discounts
+3. **Booking**: Order management with booking confirmations
+
+The implementation follows UCP version `2026-01-11` specification.
+
+## Sample Data
+
+The application includes 6 sample hotels across Indonesia:
+- Grand Marina Hotel (Jakarta)
+- Bali Beach Resort (Bali)
+- Yogyakarta Heritage Hotel (Yogyakarta)
+- Bandung Mountain View Hotel (Bandung)
+- Surabaya Business Hotel (Surabaya)
+- Lombok Paradise Resort (Lombok)
+
+Each hotel has associated rooms with different types and pricing.
+
+## Discount Codes
+
+Try these discount codes during checkout:
+- `WELCOME10` - 10% off
+- `SUMMER20` - 20% off
+- `EARLYBIRD15` - 15% off
+
+## Usage Example
+
+1. **Search Hotels**: Use the search bar to filter by location
+2. **View Details**: Click on any hotel card to see details and available rooms
+3. **Book a Room**: Click "Book Now" on any room
+4. **Apply Discount**: Enter a discount code (optional)
+5. **Complete Booking**: Fill in your details and complete the booking
+6. **Confirmation**: Receive a booking confirmation with confirmation number
+
+## Technologies Used
+
+- **Backend**: Node.js, Express.js
+- **Frontend**: Vanilla JavaScript, HTML5, CSS3
+- **Protocol**: Universal Commerce Protocol (UCP)
+- **Architecture**: RESTful API
+
+## UCP Compliance
+
+This implementation demonstrates:
+- ✅ Capability discovery
+- ✅ Checkout session management
+- ✅ Discount extensions
+- ✅ Payment handler integration
+- ✅ Booking/order management
+
+## Development
+
+To modify hotel data, edit `server/data/hotels.js`.
+
+To customize the UI, modify files in the `public/` directory.
+
+## License
+
+MIT
+
+## References
+
+- [Universal Commerce Protocol (UCP)](https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/)
+- [UCP GitHub Repository](https://github.com/Universal-Commerce-Protocol)
+
+## Notes
+
+- This is a demonstration application with hardcoded data
+- Payment processing is simulated (mock payment handler)
+- Bookings are stored in-memory and will be lost on server restart
+- For production use, integrate with a proper database and payment gateway
