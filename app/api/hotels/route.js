@@ -1,4 +1,4 @@
-import { hotels } from '@/lib/data/hotels';
+import { getHotelsData } from '@/lib/data/store_adapter';
 import { NextResponse } from 'next/server';
 
 export async function GET(request) {
@@ -8,6 +8,7 @@ export async function GET(request) {
   const maxPrice = searchParams.get('maxPrice');
   const rating = searchParams.get('rating');
   
+  const hotels = getHotelsData();
   let filteredHotels = [...hotels];
   
   if (location) {

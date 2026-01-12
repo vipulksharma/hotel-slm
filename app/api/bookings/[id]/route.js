@@ -1,9 +1,9 @@
-import { bookings } from '@/lib/data/hotels';
+import { getBookingsData, findBooking } from '@/lib/data/store_adapter';
 import { NextResponse } from 'next/server';
 
 export async function GET(request, { params }) {
   const { id } = await params;
-  const booking = bookings.find(b => b.id === id);
+  const booking = findBooking(id);
   
   if (!booking) {
     return NextResponse.json(

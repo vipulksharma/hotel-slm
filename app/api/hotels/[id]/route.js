@@ -1,9 +1,9 @@
-import { hotels, rooms } from '@/lib/data/hotels';
+import { getHotelsData, getRoomsData, findHotel } from '@/lib/data/store_adapter';
 import { NextResponse } from 'next/server';
 
 export async function GET(request, { params }) {
   const { id } = await params;
-  const hotel = hotels.find(h => h.id === id);
+  const hotel = findHotel(id);
   
   if (!hotel) {
     return NextResponse.json(
@@ -12,6 +12,7 @@ export async function GET(request, { params }) {
     );
   }
   
+  const rooms = getRoomsData();
   const hotelRooms = rooms.filter(r => r.hotelId === hotel.id);
   return NextResponse.json({
     ...hotel,

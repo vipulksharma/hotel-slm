@@ -241,7 +241,10 @@ export default function Home() {
 
       if (!response.ok) {
         const errorData = await response.json()
-        throw new Error(errorData.error || 'Failed to complete booking')
+        const errorMessage = errorData.error || 'Failed to complete booking'
+        console.error('Booking error:', errorMessage, 'Session ID:', checkoutSession?.id)
+        alert(`Error completing booking: ${errorMessage}`)
+        return
       }
 
       const booking = await response.json()
@@ -257,7 +260,7 @@ export default function Home() {
       loadHotels()
     } catch (error) {
       console.error('Error completing booking:', error)
-      alert('Error completing booking. Please try again.')
+      alert(`Error completing booking: ${error.message || 'Please try again.'}`)
     }
   }
 

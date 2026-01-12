@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Hotel booking application using Universal Commerce Protocol (UCP) with Next.js 16",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import-hotels": "node scripts/import-hotels.js"
   },
   "keywords": [
     "ucp",

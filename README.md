@@ -10,7 +10,7 @@ This application demonstrates how to implement a hotel booking system using UCP 
 - **Frontend**: React 18 with Server Components
 - **Backend**: Next.js API Routes
 - **UCP Integration**: Full support for discovery, checkout, and booking capabilities
-- **Hardcoded Data**: Sample hotels and rooms for demonstration
+- **Business Store**: UCP-compliant business server with persistent data store
 
 ## Features
 
@@ -21,6 +21,7 @@ This application demonstrates how to implement a hotel booking system using UCP 
 - 🤖 AI-powered natural language booking
 - 📱 Responsive design for mobile and desktop
 - ✅ Booking confirmation with unique confirmation numbers
+- 🗄️ UCP Business Store with persistent data storage
 
 ## Project Structure
 
@@ -37,10 +38,18 @@ This application demonstrates how to implement a hotel booking system using UCP 
 │   └── page.js                # Main page (client component)
 ├── lib/
 │   ├── data/
-│   │   └── hotels.js          # Hotel and room data
-│   └── services/
-│       ├── checkout.js        # Checkout service
-│       └── discovery.js      # UCP discovery service
+│   │   ├── hotels.js          # Hotel and room data (fallback)
+│   │   └── store_adapter.js  # Adapter for UCP store
+│   ├── services/
+│   │   ├── checkout.js        # Checkout service
+│   │   └── discovery.js      # UCP discovery service
+│   └── ucp/
+│       ├── store.js          # UCP business store
+│       └── import_hotels.js  # Hotel import script
+├── scripts/
+│   └── import-hotels.js      # Import script runner
+├── data/
+│   └── ucp_store.json        # UCP business store data (auto-generated)
 ├── next.config.js             # Next.js configuration
 ├── package.json               # Dependencies
 └── README.md                  # This file
@@ -63,6 +72,21 @@ cd /Users/vipulsharma/projects/automation
 npm install
 ```
 
+3. **Set up the UCP business server and import hotels:**
+```bash
+npm run import-hotels
+```
+
+This command will:
+- Initialize the UCP business store
+- Import all hardcoded hotels and rooms into the store
+- Create `data/ucp_store.json` with all hotel data
+
+Following the pattern from the [UCP blog post](https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/), this is similar to running:
+```bash
+uv run import_csv.py --products_db_path=/tmp/ucp_test/products.db
+```
+
 ## Running the Application
 
 ### Development Mode
@@ -79,6 +103,22 @@ The application will be available at `http://localhost:3000`
 npm run build
 npm start
 ```
+
+## UCP Business Server Setup
+
+The application follows the UCP business server pattern from the [Google Developers blog post](https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/):
+
+1. **Business Store**: Hotels and rooms are stored in `data/ucp_store.json` (similar to SQLite database in Python example)
+2. **Product Import**: Use `npm run import-hotels` to populate the store
+3. **API Endpoints**: All endpoints follow UCP specification patterns
+
+### Store Structure
+
+The UCP store (`data/ucp_store.json`) contains:
+- `hotels`: Array of hotel products
+- `rooms`: Array of room products
+- `bookings`: Array of completed bookings
+- Metadata: `createdAt`, `updatedAt`, `version`
 
 ## API Endpoints
 
@@ -109,6 +149,7 @@ This application implements UCP capabilities:
 1. **Discovery**: Business capabilities are exposed via `/api/ucp/profile`
 2. **Checkout**: Full checkout flow with line items, totals, and discounts
 3. **Booking**: Order management with booking confirmations
+4. **Business Store**: Persistent product storage following UCP patterns
 
 The implementation follows UCP version `2026-01-11` specification.
 
@@ -123,6 +164,8 @@ The application includes 6 sample hotels across Indonesia:
 - Lombok Paradise Resort (Lombok)
 
 Each hotel has associated rooms with different types and pricing.
+
+All hotels are imported into the UCP business store on first run.
 
 ## Discount Codes
 
@@ -148,12 +191,13 @@ The system will automatically:
 
 ## Usage Example
 
-1. **Search Hotels**: Use the search bar to filter by location
-2. **View Details**: Click on any hotel card to see details and available rooms
-3. **Book a Room**: Click "Book Now" on any room
-4. **Apply Discount**: Enter a discount code (optional)
-5. **Complete Booking**: Fill in your details and complete the booking
-6. **Confirmation**: Receive a booking confirmation with confirmation number
+1. **Import Hotels**: Run `npm run import-hotels` to set up the business store
+2. **Search Hotels**: Use the search bar to filter by location
+3. **View Details**: Click on any hotel card to see details and available rooms
+4. **Book a Room**: Click "Book Now" on any room
+5. **Apply Discount**: Enter a discount code (optional)
+6. **Complete Booking**: Fill in your details and complete the booking
+7. **Confirmation**: Receive a booking confirmation with confirmation number
 
 ## Technologies Used
 
@@ -162,6 +206,7 @@ The system will automatically:
 - **Styling**: CSS Modules / Global CSS
 - **Protocol**: Universal Commerce Protocol (UCP)
 - **Architecture**: App Router with API Routes
+- **Storage**: JSON-based UCP business store
 
 ## UCP Compliance
 
@@ -171,12 +216,14 @@ This implementation demonstrates:
 - ✅ Discount extensions
 - ✅ Payment handler integration
 - ✅ Booking/order management
+- ✅ Business server setup with product store
 
 ## Development
 
 ### Modifying Hotel Data
 
-Edit `lib/data/hotels.js` to add or modify hotels and rooms.
+1. Edit `lib/data/hotels.js` to add or modify hotels and rooms
+2. Run `npm run import-hotels` to update the UCP store
 
 ### Customizing the UI
 
@@ -192,11 +239,7 @@ This project was migrated from Express.js to Next.js 16. Key changes:
 - Express routes → Next.js API routes (`app/api/`)
 - Vanilla JS → React components
 - Separate server/client → Unified Next.js app
-- Static files → Next.js public directory (if needed)
-
-## License
-
-MIT
+- Hardcoded data → UCP business store
 
 ## References
 
@@ -206,8 +249,8 @@ MIT
 
 ## Notes
 
-- This is a demonstration application with hardcoded data
+- The UCP business store uses JSON file storage (similar to SQLite in Python example)
 - Payment processing is simulated (mock payment handler)
-- Bookings are stored in-memory and will be lost on server restart
+- Bookings are persisted in the UCP store
 - For production use, integrate with a proper database and payment gateway
 - The natural language parser uses pattern matching; can be enhanced with LLM integration

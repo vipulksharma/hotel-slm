@@ -1,4 +1,4 @@
-import { rooms } from '@/lib/data/hotels';
+import { getRoomsData } from '@/lib/data/store_adapter';
 import { NextResponse } from 'next/server';
 
 export async function GET(request, { params }) {
@@ -8,6 +8,7 @@ export async function GET(request, { params }) {
   const checkOut = searchParams.get('checkOut');
   const guests = searchParams.get('guests');
   
+  const rooms = getRoomsData();
   const hotelRooms = rooms.filter(r => r.hotelId === id);
   
   // Simple availability check (in production, this would check actual bookings)
