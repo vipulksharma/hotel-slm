@@ -176,18 +176,209 @@ Try these discount codes during checkout:
 
 ## Natural Language Booking
 
-Use the AI-powered search box at the top to book hotels using natural language:
+Use the AI-powered search box at the top to book hotels using natural language. The system understands various phrasings and will automatically parse your request, search for matching hotels, find the specified room type, and complete the booking.
 
-**Example:**
+### Complete Booking Examples
+
+**Basic booking with all details:**
 ```
 book a hotel in Jakarta checkin 2026-01-15 checkout 2026-01-16 for 2 guests with 4.5 star rating. book the executive suite for guest named vipul with email guest@m.com and phone number 9009900900
 ```
 
-The system will automatically:
-1. Parse your request
-2. Search for matching hotels
-3. Find the specified room type
-4. Create and complete the booking
+**Casual/conversational style:**
+```
+I need a hotel in Bali from January 15th to 16th for 2 people. Looking for something with 4 stars. Book the beachfront villa for John Doe, email john@example.com, phone 1234567890
+```
+
+**Formal request:**
+```
+Please book a hotel room in Yogyakarta. Check-in date: 2026-02-20, check-out date: 2026-02-22. Accommodation for 3 guests. Minimum rating: 4.5 stars. Room type: Heritage Room. Guest name: Jane Smith, email: jane.smith@email.com, contact: +62-812-3456-7890
+```
+
+**Quick booking:**
+```
+book hotel Jakarta 2026-01-15 to 2026-01-17 2 guests 4 star deluxe room name: Mike email: mike@test.com phone: 5551234
+```
+
+**With different date formats:**
+```
+Find me a hotel in Bandung check-in 01/15/2026 check-out 01/18/2026 for 4 guests. Need 4.7 star rating. Book mountain view room. Guest: Sarah Johnson, sarah@email.com, 9876543210
+```
+
+**Multiple preferences:**
+```
+I want to book a hotel in Surabaya from 2026-03-10 to 2026-03-12. Need it for 2 guests, at least 4.5 stars. Please book the business room for guest named Robert Chen, email robert.chen@company.com, phone number is 555-9876
+```
+
+**With room type variations:**
+```
+Book a deluxe room in Lombok. Check in 2026-04-01, check out 2026-04-05. For 3 guests. Hotel should be 4.8 stars. Guest details: Maria Garcia, maria.garcia@mail.com, 123-456-7890
+```
+
+### Search-Only Examples (Without Booking)
+
+**Simple location search:**
+```
+show me hotels in Jakarta
+```
+
+**Search with filters:**
+```
+find hotels in Bali with 4.5 star rating
+```
+
+**Search with date range:**
+```
+hotels in Yogyakarta checkin 2026-02-15 checkout 2026-02-17
+```
+
+**Search with guest count:**
+```
+show hotels in Bandung for 4 guests
+```
+
+**Search with price range:**
+```
+find hotels in Surabaya under 600000 per night
+```
+
+**Combined search:**
+```
+hotels in Lombok for 2 guests checkin 2026-05-01 checkout 2026-05-03 with 4.7 stars
+```
+
+### Different Ways to Express Location
+
+```
+hotel in Jakarta
+hotel at Jakarta
+hotels in Bali
+find hotels in Yogyakarta
+show me hotels in Bandung
+I need a hotel in Surabaya
+book hotel Lombok
+Jakarta hotels
+Bali accommodation
+```
+
+### Different Date Formats Supported
+
+```
+checkin 2026-01-15 checkout 2026-01-16
+check-in 2026-01-15 check-out 2026-01-16
+check in 2026-01-15 check out 2026-01-16
+from 2026-01-15 to 2026-01-16
+January 15 to January 16, 2026
+01/15/2026 to 01/16/2026
+15-01-2026 to 16-01-2026
+arriving 2026-01-15 departing 2026-01-16
+```
+
+### Different Ways to Express Guest Count
+
+```
+for 2 guests
+for 2 people
+for 2 persons
+2 guests
+2 people
+accommodation for 3 guests
+room for 4 people
+```
+
+### Different Ways to Express Rating
+
+```
+4.5 star rating
+4.5 stars
+4 star hotel
+minimum 4.5 stars
+at least 4 stars
+4.8 star rating or higher
+```
+
+### Different Room Type Expressions
+
+```
+executive suite
+deluxe room
+delux room (also works)
+beachfront villa
+ocean view suite
+heritage room
+mountain view room
+business room
+garden villa
+suite
+villa
+deluxe
+executive
+```
+
+### Different Ways to Provide Guest Information
+
+```
+guest named John Doe
+name: John Doe
+guest name: John Doe
+for John Doe
+booked under John Doe
+email john@example.com
+email: john@example.com
+phone 1234567890
+phone number 1234567890
+phone: 1234567890
+contact 1234567890
+mobile 1234567890
+```
+
+### Real-World Usage Examples
+
+**Business trip:**
+```
+Book a business hotel in Jakarta from 2026-06-10 to 2026-06-12 for 1 guest. Need 4.5+ stars. Book business room for David Kim, david.kim@corp.com, +62-811-2345-6789
+```
+
+**Family vacation:**
+```
+I need a family-friendly hotel in Bali checkin 2026-07-15 checkout 2026-07-20 for 4 guests. Looking for 4.8 stars. Book beachfront villa for the Johnson family, email: johnson.family@email.com, phone: 555-1234-5678
+```
+
+**Romantic getaway:**
+```
+Find a romantic hotel in Lombok from 2026-08-01 to 2026-08-05 for 2 guests. Minimum 4.7 stars. Book garden villa for couple: Alex & Taylor, email: alex.taylor@mail.com, contact: 9876543210
+```
+
+**Weekend trip:**
+```
+Quick weekend booking: hotel in Bandung 2026-09-10 to 2026-09-12, 2 guests, 4 star, mountain view room. Guest: Sam Wilson, sam@email.com, 555-9876
+```
+
+**Last-minute booking:**
+```
+Urgent: hotel Jakarta today to tomorrow, 2 guests, any 4+ star hotel, deluxe room. Name: Lisa Park, lisa@email.com, 123-456-7890
+```
+
+**Group booking:**
+```
+Book hotel in Yogyakarta checkin 2026-10-05 checkout 2026-10-08 for 6 guests. Need 4.5 stars. Book heritage room for group leader: Tom Brown, tom.brown@group.com, phone: 555-1111-2222
+```
+
+### Tips for Best Results
+
+1. **Include essential information**: Location, check-in date, check-out date, and guest count
+2. **Be specific about preferences**: Room type, star rating, and guest details help get exactly what you want
+3. **Flexible phrasing**: The system understands various ways to express the same information
+4. **Date formats**: Use YYYY-MM-DD format for best results, but other formats are also supported
+5. **Room types**: Use exact room type names for best matching, but partial matches also work
+
+### What the System Does Automatically
+
+1. **Parses your request** - Extracts location, dates, guests, preferences, and guest information
+2. **Searches for hotels** - Finds hotels matching your location and rating criteria
+3. **Matches room type** - Finds the specified room type (with flexible matching)
+4. **Creates booking** - Automatically creates checkout session and completes booking
+5. **Confirms booking** - Provides booking confirmation with unique confirmation number
 
 ## Usage Example
 

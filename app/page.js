@@ -264,6 +264,81 @@ export default function Home() {
     }
   }
 
+  // Helper function to normalize dates
+  const normalizeDate = (dateStr) => {
+    // If already in YYYY-MM-DD format
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+      return dateStr
+    }
+    
+    // Try to parse other formats
+    const date = new Date(dateStr)
+    if (!isNaN(date.getTime())) {
+      return date.toISOString().split('T')[0]
+    }
+    
+    return dateStr
+  }
+
+  // Helper function to parse written dates like "January 15th"
+  const parseWrittenDate = (dateStr, defaultYear = new Date().getFullYear()) => {
+    const months = {
+      'january': '01', 'jan': '01',
+      'february': '02', 'feb': '02',
+      'march': '03', 'mar': '03',
+      'april': '04', 'apr': '04',
+      'may': '05',
+      'june': '06', 'jun': '06',
+      'july': '07', 'jul': '07',
+      'august': '08', 'aug': '08',
+      'september': '09', 'sep': '09', 'sept': '09',
+      'october': '10', 'oct': '10',
+      'november': '11', 'nov': '11',
+      'december': '12', 'dec': '12'
+    }
+    
+    if (!dateStr || !dateStr.trim()) return null
+    
+    const lowerDate = dateStr.toLowerCase().trim()
+    
+    // Try to match patterns like "January 15th" or "Jan 15" or "January 15, 2026"
+    const patterns = [
+      /(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s+(\d{1,2})(?:st|nd|rd|th)?(?:\s*,?\s*(\d{4}))?/i,
+      /(\d{1,2})(?:st|nd|rd|th)?\s+(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(?:\s*,?\s*(\d{4}))?/i
+    ]
+    
+    for (const pattern of patterns) {
+      const match = lowerDate.match(pattern)
+      if (match) {
+        let month, day, year
+        // Check if first match is a month name
+        const firstIsMonth = Object.keys(months).some(m => match[1].toLowerCase().startsWith(m.toLowerCase()))
+        
+        if (firstIsMonth) {
+          // First pattern: month day
+          const monthKey = Object.keys(months).find(m => match[1].toLowerCase().startsWith(m.toLowerCase()))
+          if (monthKey) {
+            month = months[monthKey]
+            day = parseInt(match[2]).toString().padStart(2, '0')
+            year = match[3] ? match[3] : defaultYear.toString()
+            return `${year}-${month}-${day}`
+          }
+        } else {
+          // Second pattern: day month
+          day = parseInt(match[1]).toString().padStart(2, '0')
+          const monthKey = Object.keys(months).find(m => match[2].toLowerCase().startsWith(m.toLowerCase()))
+          if (monthKey) {
+            month = months[monthKey]
+            year = match[3] ? match[3] : defaultYear.toString()
+            return `${year}-${month}-${day}`
+          }
+        }
+      }
+    }
+    
+    return null
+  }
+
   // Natural Language Processing functions (simplified - full version would be in a separate file)
   const parseNaturalLanguageQuery = (query) => {
     const lowerQuery = query.toLowerCase()
@@ -272,45 +347,291 @@ export default function Home() {
     let action = 'book' // default: complete booking
     if (lowerQuery.includes('show') && (lowerQuery.includes('room') || lowerQuery.includes('room types'))) {
       action = 'show_rooms'
+    } else if ((lowerQuery.includes('show') || lowerQuery.includes('find') || lowerQuery.includes('search')) && 
+               (lowerQuery.includes('hotel') || lowerQuery.includes('hotels'))) {
+      action = 'search' // Search-only query, doesn't require dates
+    } else if (lowerQuery.match(/^hotel\s+at\s+/i) || lowerQuery.match(/^hotels?\s+at\s+/i)) {
+      action = 'search' // "hotel at [city]" is a search query
     } else if (lowerQuery.includes('select') && lowerQuery.includes('room') && (lowerQuery.includes('form') || lowerQuery.includes('booking'))) {
       action = 'select_room'
-    } else if (lowerQuery.includes('book') && (lowerQuery.includes('guest named') || lowerQuery.includes('email'))) {
+    } else if (lowerQuery.includes('book') || lowerQuery.includes('email') || lowerQuery.includes('phone')) {
       action = 'book'
     }
     
-    const cityMatch = query.match(/(?:in|at)\s+([a-zA-Z\s]+?)(?:\s+checkin|\s+check-in|\s+checkout|\s+check-out|\s+for|$)/i)
-    const city = cityMatch ? cityMatch[1].trim() : null
+    // Extract city - enhanced patterns (stop before dates, numbers, or common booking words)
+    const cityPatterns = [
+      /(?:show|find|search)\s+(?:me\s+)?(?:hotels?\s+)?(?:in|at)\s+([a-zA-Z]+)(?:\s+with|\s+under|\s*\.|$)/i,
+      /hotel\s+at\s+([a-zA-Z]+)(?:\s*\.|$)/i,
+      /hotels?\s+at\s+([a-zA-Z]+)(?:\s*\.|$)/i,
+      /(?:please\s+)?book\s+(?:a\s+)?(?:deluxe|executive|beachfront|ocean\s+view|heritage|mountain\s+view|business|garden)?\s*(?:room|suite|villa)?\s+in\s+([a-zA-Z]+)(?:\s*\.|\s+check|\s+\d{4}|$)/i,
+      /(?:please\s+)?book\s+(?:a\s+)?(?:hotel\s+)?room\s+in\s+([a-zA-Z]+)(?:\s*\.|\s+check|\s+\d{4}|$)/i,
+      /book\s+(?:a\s+)?hotel\s+([a-zA-Z]+)(?:\s+\d{4}|\s+from|\s+checkin|\s+check-in|\s+checkout|\s+check-out|\s+for\s+\d|$)/i,
+      /need\s+(?:a\s+)?hotel\s+in\s+([a-zA-Z]+)(?:\s+from|\s+checkin|\s+check-in|\s+checkout|\s+check-out|\s+for\s+\d|$)/i,
+      /book\s+(?:a\s+)?hotel\s+in\s+([a-zA-Z]+)(?:\s+from|\s+checkin|\s+check-in|\s+checkout|\s+check-out|\s+arriving|\s+departing|\s+for\s+\d|$)/i,
+      /hotel\s+(?:room\s+)?in\s+([a-zA-Z]+)(?:\s+from|\s+checkin|\s+check-in|\s+checkout|\s+check-out|\s+arriving|\s+departing|\s+for\s+\d|$)/i,
+      /(?:in|at)\s+([a-zA-Z]+)(?:\s+from|\s+checkin|\s+check-in|\s+checkout|\s+check-out|\s+arriving|\s+departing|\s+for\s+\d|\s+looking|$)/i
+    ]
+    let city = null
+    for (const pattern of cityPatterns) {
+      const match = query.match(pattern)
+      if (match) {
+        city = match[1].trim()
+        // Clean up - remove any trailing words that aren't part of the city name
+        city = city.split(/\s+/)[0] // Take only the first word (city name)
+        break
+      }
+    }
     
-    const checkInMatch = query.match(/(?:checkin|check-in)\s+(\d{4}-\d{2}-\d{2})/i)
-    const checkIn = checkInMatch ? checkInMatch[1] : null
+    // Extract dates - support multiple formats including "from...to" and simple date ranges
+    let checkIn = null
+    let checkOut = null
     
-    const checkOutMatch = query.match(/(?:checkout|check-out)\s+(\d{4}-\d{2}-\d{2})/i)
-    const checkOut = checkOutMatch ? checkOutMatch[1] : null
+    // First try simple date range format (e.g., "2026-01-15 to 2026-01-17")
+    const dateRangePattern = /(\d{4}-\d{2}-\d{2})\s+to\s+(\d{4}-\d{2}-\d{2})/i
+    const dateRangeMatch = query.match(dateRangePattern)
+    if (dateRangeMatch) {
+      checkIn = normalizeDate(dateRangeMatch[1])
+      checkOut = normalizeDate(dateRangeMatch[2])
+    }
     
-    const guestsMatch = query.match(/(?:for\s+)?(\d+)\s+guests?/i)
-    const guests = guestsMatch ? parseInt(guestsMatch[1]) : 2
+    // If not found, try "from...to" pattern (e.g., "from January 15th to 16th")
+    if (!checkIn || !checkOut) {
+      const fromToPatterns = [
+        /from\s+([a-zA-Z]+\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*\d{4})?)\s+to\s+(\d{1,2}(?:st|nd|rd|th)?|[a-zA-Z]+\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*\d{4})?)(?:\s+for|\s+with|\s+looking|$)/i,
+        /from\s+([a-zA-Z]+\s+\d{1,2}(?:st|nd|rd|th)?)\s+to\s+(\d{1,2}(?:st|nd|rd|th)?)/i
+      ]
+      
+      for (const pattern of fromToPatterns) {
+        const fromToMatch = query.match(pattern)
+        if (fromToMatch) {
+          const fromDate = fromToMatch[1].trim()
+          const toDate = fromToMatch[2].trim()
+          
+          // Try to parse written dates
+          const parsedFrom = parseWrittenDate(fromDate)
+          const parsedTo = parseWrittenDate(toDate)
+          
+          if (parsedFrom) checkIn = parsedFrom
+          if (parsedTo) checkOut = parsedTo
+          
+          // If "to" date is just a day number (like "16th"), use same month/year as "from"
+          if (!parsedTo && parsedFrom) {
+            const fromParts = parsedFrom.split('-')
+            const dayMatch = toDate.match(/(\d{1,2})(?:st|nd|rd|th)?/i)
+            if (dayMatch) {
+              const day = parseInt(dayMatch[1]).toString().padStart(2, '0')
+              checkOut = `${fromParts[0]}-${fromParts[1]}-${day}`
+            }
+          }
+          
+          // If we got both dates, we're done
+          if (checkIn && checkOut) break
+        }
+      }
+    }
     
-    const ratingMatch = query.match(/(\d+\.?\d*)\s+star/i)
-    const rating = ratingMatch ? parseFloat(ratingMatch[1]) : null
+    // If not found, try checkin/checkout patterns (including formal formats with colons and commas)
+    if (!checkIn) {
+      const checkInPatterns = [
+        /arriving\s+(\d{4}-\d{2}-\d{2})/i,
+        /arriving\s+(\d{2}\/\d{2}\/\d{4})/i,
+        /arriving\s+(\d{2}-\d{2}-\d{4})/i,
+        /(?:check-in\s+date|checkin\s+date|check\s+in\s+date)[:\s]+(\d{4}-\d{2}-\d{2})/i,
+        /(?:check-in\s+date|checkin\s+date|check\s+in\s+date)[:\s]+(\d{2}\/\d{2}\/\d{4})/i,
+        /(?:check-in\s+date|checkin\s+date|check\s+in\s+date)[:\s]+(\d{2}-\d{2}-\d{4})/i,
+        /(?:checkin|check-in|check\s+in)[:\s,]+(\d{4}-\d{2}-\d{2})/i,
+        /(?:checkin|check-in|check\s+in)\s+(\d{4}-\d{2}-\d{2})(?:\s*,|$)/i,
+        /(?:checkin|check-in|check\s+in)\s+(\d{2}\/\d{2}\/\d{4})/i,
+        /(?:checkin|check-in|check\s+in)\s+(\d{2}-\d{2}-\d{4})/i,
+        /(?:checkin|check-in|check\s+in)\s+([a-zA-Z]+\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*\d{4})?)/i
+      ]
+      for (const pattern of checkInPatterns) {
+        const match = query.match(pattern)
+        if (match) {
+          if (match[1].match(/[a-zA-Z]/)) {
+            checkIn = parseWrittenDate(match[1])
+          } else {
+            checkIn = normalizeDate(match[1])
+          }
+          if (checkIn) break
+        }
+      }
+    }
     
-    // Enhanced room type matching (including "delux" as variant of "deluxe")
-    const roomTypeMatch = query.match(/(?:the\s+|select\s+)?(executive\s+suite|deluxe\s+room|delux\s+room|beachfront\s+villa|ocean\s+view\s+suite|heritage\s+room|mountain\s+view\s+room|business\s+room|garden\s+villa)/i)
-    let roomType = roomTypeMatch ? roomTypeMatch[1].trim() : null
+    if (!checkOut) {
+      const checkOutPatterns = [
+        /departing\s+(\d{4}-\d{2}-\d{2})/i,
+        /departing\s+(\d{2}\/\d{2}\/\d{4})/i,
+        /departing\s+(\d{2}-\d{2}-\d{4})/i,
+        /(?:check-out\s+date|checkout\s+date|check\s+out\s+date)[:\s]+(\d{4}-\d{2}-\d{2})/i,
+        /(?:check-out\s+date|checkout\s+date|check\s+out\s+date)[:\s]+(\d{2}\/\d{2}\/\d{4})/i,
+        /(?:check-out\s+date|checkout\s+date|check\s+out\s+date)[:\s]+(\d{2}-\d{2}-\d{4})/i,
+        /(?:checkout|check-out|check\s+out)[:\s,]+(\d{4}-\d{2}-\d{2})/i,
+        /(?:checkout|check-out|check\s+out)\s+(\d{4}-\d{2}-\d{2})(?:\s*\.|$)/i,
+        /(?:checkout|check-out|check\s+out)\s+(\d{2}\/\d{2}\/\d{4})/i,
+        /(?:checkout|check-out|check\s+out)\s+(\d{2}-\d{2}-\d{4})/i,
+        /(?:checkout|check-out|check\s+out)\s+([a-zA-Z]+\s+\d{1,2}(?:st|nd|rd|th)?(?:\s*,?\s*\d{4})?)/i
+      ]
+      for (const pattern of checkOutPatterns) {
+        const match = query.match(pattern)
+        if (match) {
+          if (match[1].match(/[a-zA-Z]/)) {
+            checkOut = parseWrittenDate(match[1])
+          } else {
+            checkOut = normalizeDate(match[1])
+          }
+          if (checkOut) break
+        }
+      }
+    }
+    
+    // Extract guests - support "people" and "persons" in addition to "guests"
+    const guestsPatterns = [
+      /(?:for\s+)?(\d+)\s+guests?/i,
+      /(?:for\s+)?(\d+)\s+people/i,
+      /(?:for\s+)?(\d+)\s+persons?/i,
+      /accommodation\s+for\s+(\d+)/i
+    ]
+    let guests = 2 // default
+    for (const pattern of guestsPatterns) {
+      const match = query.match(pattern)
+      if (match) {
+        guests = parseInt(match[1])
+        break
+      }
+    }
+    
+    // Extract rating - support "minimum rating:", "X stars", "with X star rating" formats
+    const ratingPatterns = [
+      /(?:minimum\s+)?rating[:\s]+(\d+\.?\d*)\s*stars?/i,
+      /with\s+(\d+\.?\d*)\s+star\s+rating/i,
+      /(\d+\.?\d*)\s+star(?:\s+rating)?/i,
+      /rating[:\s]+(\d+\.?\d*)/i
+    ]
+    let rating = null
+    for (const pattern of ratingPatterns) {
+      const match = query.match(pattern)
+      if (match) {
+        rating = parseFloat(match[1])
+        break
+      }
+    }
+    
+    // Extract price filters - support "under X per night", "below X", "less than X", "max X"
+    const pricePatterns = [
+      /under\s+(\d+(?:,\d{3})*)\s+per\s+night/i,
+      /under\s+(\d+(?:,\d{3})*)/i,
+      /below\s+(\d+(?:,\d{3})*)\s+per\s+night/i,
+      /below\s+(\d+(?:,\d{3})*)/i,
+      /less\s+than\s+(\d+(?:,\d{3})*)\s+per\s+night/i,
+      /less\s+than\s+(\d+(?:,\d{3})*)/i,
+      /max\s+(\d+(?:,\d{3})*)\s+per\s+night/i,
+      /max\s+(\d+(?:,\d{3})*)/i,
+      /maximum\s+(\d+(?:,\d{3})*)\s+per\s+night/i,
+      /maximum\s+(\d+(?:,\d{3})*)/i
+    ]
+    let priceMax = null
+    for (const pattern of pricePatterns) {
+      const match = query.match(pattern)
+      if (match) {
+        // Remove commas and parse as integer
+        priceMax = parseInt(match[1].replace(/,/g, ''))
+        break
+      }
+    }
+    
+    // Enhanced room type matching (including "delux" as variant of "deluxe" and "Room type:" format)
+    const roomTypePatterns = [
+      /room\s+type[:\s]+([a-zA-Z\s]+?)(?:\.|,|$)/i,
+      /(?:the\s+|select\s+|book\s+)?(executive\s+suite|deluxe\s+room|delux\s+room|beachfront\s+villa|ocean\s+view\s+suite|heritage\s+room|mountain\s+view\s+room|business\s+room|garden\s+villa)/i
+    ]
+    let roomType = null
+    for (const pattern of roomTypePatterns) {
+      const match = query.match(pattern)
+      if (match) {
+        roomType = match[1].trim()
     // Normalize "delux" to "deluxe"
     if (roomType && roomType.toLowerCase().includes('delux')) {
       roomType = roomType.replace(/delux/gi, 'deluxe')
+        }
+        // If it's from "Room type:" format, make sure it matches known room types
+        if (roomType && !roomType.match(/^(executive\s+suite|deluxe\s+room|beachfront\s+villa|ocean\s+view\s+suite|heritage\s+room|mountain\s+view\s+room|business\s+room|garden\s+villa)$/i)) {
+          // Try to match partial names
+          const knownTypes = ['executive suite', 'deluxe room', 'beachfront villa', 'ocean view suite', 'heritage room', 'mountain view room', 'business room', 'garden villa']
+          const matchedType = knownTypes.find(type => roomType.toLowerCase().includes(type.toLowerCase()) || type.toLowerCase().includes(roomType.toLowerCase()))
+          if (matchedType) {
+            roomType = matchedType
+          }
+        }
+        break
+      }
     }
     
-    const nameMatch = query.match(/(?:guest\s+named|for\s+guest\s+named)\s+([a-zA-Z\s]+?)(?:\s+with|\s+email|$)/i)
-    const guestName = nameMatch ? nameMatch[1].trim() : null
+    // Enhanced guest name extraction - support "for [Name]" pattern and "Guest name:" format
+    // Look for names after room type or before email/phone, avoiding "for 2 people" patterns
+    // Accept both single names and full names
     
-    const emailMatch = query.match(/email\s+([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i)
-    const email = emailMatch ? emailMatch[1] : null
+    // First, try "Guest details:" format which contains name, email, phone in one line
+    const guestDetailsMatch = query.match(/guest\s+details[:\s]+([^,]+),\s*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}),\s*([\d\s\+\-\(\)]+)/i)
+    let guestName = null
+    let email = null
+    let phone = null
     
-    const phoneMatch = query.match(/phone\s+(?:number\s+)?([\d\s\+\-\(\)]+)/i)
-    const phone = phoneMatch ? phoneMatch[1].replace(/\s+/g, '') : null
+    if (guestDetailsMatch) {
+      // Extract from "Guest details:" format
+      guestName = guestDetailsMatch[1].trim()
+      email = guestDetailsMatch[2]
+      phone = guestDetailsMatch[3].replace(/\s+/g, '')
+    } else {
+      // Extract name, email, phone separately
+      const namePatterns = [
+        /(?:guest\s+name|guest\s+named|for\s+guest\s+named)[:\s]+([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)(?:\s*,|\s+with|\s+email|$)/i,
+        /book\s+(?:the|a|an)?\s*[^f]*?\s+for\s+([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)(?:\s*,|\s+email|\s+phone|$)/i,
+        /(?:for|guest)\s+([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)(?:\s*,|\s+email|\s+phone)(?!\s+(?:people|guests|persons))/i,
+        /name[:\s]+([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)/i
+      ]
+      for (const pattern of namePatterns) {
+        const match = query.match(pattern)
+        if (match) {
+          const potentialName = match[1].trim()
+          // Verify it's a name (not a number, not "people"/"guests", at least 1 word)
+          if (potentialName.split(/\s+/).length >= 1 && 
+              !potentialName.match(/\d/) && 
+              !potentialName.toLowerCase().match(/\b(people|guests|persons)\b/)) {
+            guestName = potentialName
+            break
+          }
+        }
+      }
+      
+      // Extract email - support "email:" format
+      const emailPatterns = [
+        /email[:\s]+([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i,
+        /email\s+([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i
+      ]
+      for (const pattern of emailPatterns) {
+        const match = query.match(pattern)
+        if (match) {
+          email = match[1]
+          break
+        }
+      }
+      
+      // Extract phone - support "contact:" and "phone:" formats
+      const phonePatterns = [
+        /(?:contact|phone)[:\s]+(?:number\s+)?([\d\s\+\-\(\)]+)/i,
+        /phone\s+(?:number\s+)?([\d\s\+\-\(\)]+)/i
+      ]
+      for (const pattern of phonePatterns) {
+        const match = query.match(pattern)
+        if (match) {
+          phone = match[1].replace(/\s+/g, '')
+          break
+        }
+      }
+    }
     
-    return { action, city, checkIn, checkOut, guests, rating, roomType, guestName, email, phone }
+    return { action, city, checkIn, checkOut, guests, rating, roomType, guestName, email, phone, priceMax }
   }
 
   const processNaturalLanguageQuery = async () => {
@@ -324,8 +645,63 @@ export default function Home() {
     try {
       const params = parseNaturalLanguageQuery(nlQuery)
       
+      // Debug: log what was parsed
+      console.log('Parsed params:', params)
+      
+      // Handle search-only queries (don't require dates)
+      if (params.action === 'search') {
+        if (!params.city) {
+          setNlStatus('<div style="color: red;">❌ Please specify a city to search for hotels.</div>')
+          return
+        }
+        
+        setNlStatus('<div style="color: blue;">🔍 Searching for hotels...</div>')
+        
+        // Search hotels
+        const searchParams = new URLSearchParams()
+        if (params.city) searchParams.append('location', params.city)
+        if (params.rating) searchParams.append('rating', params.rating)
+        
+        const hotelsResponse = await fetch(`${API_BASE}/api/hotels?${searchParams}`)
+        const hotelsData = await hotelsResponse.json()
+        
+        if (!hotelsData.hotels || hotelsData.hotels.length === 0) {
+          setNlStatus(`<div style="color: red;">❌ No hotels found in ${params.city}</div>`)
+          return
+        }
+        
+        // Update the location filter to show the results
+        setLocation(params.city)
+        if (params.rating) setRating(params.rating)
+        if (params.priceMax) setPriceMax(params.priceMax)
+        
+        setNlStatus(`
+          <div style="background: var(--primary-color); color: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+            <h3 style="margin: 0 0 0.5rem 0;">✅ Found ${hotelsData.hotels.length} hotel(s) in ${params.city}</h3>
+            <p style="margin: 0.5rem 0; font-size: 0.9rem;">Scrolling to hotels...</p>
+          </div>
+        `)
+        
+        setNlQuery('')
+        
+        // Scroll to hotels section after a short delay to allow state update
+        setTimeout(() => {
+          const hotelsSection = document.querySelector('.hotels-section')
+          if (hotelsSection) {
+            hotelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
+        
+        return
+      }
+      
+      // For booking actions, require dates
       if (!params.city || !params.checkIn || !params.checkOut) {
-        setNlStatus('<div style="color: red;">❌ Missing required information. Please include city, check-in, and check-out dates.</div>')
+        const missing = []
+        if (!params.city) missing.push('city')
+        if (!params.checkIn) missing.push('check-in date')
+        if (!params.checkOut) missing.push('check-out date')
+        setNlStatus(`<div style="color: red;">❌ Missing required information: ${missing.join(', ')}. Please include city, check-in, and check-out dates.</div>`)
         return
       }
       
